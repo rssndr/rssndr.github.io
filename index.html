@@ -47,7 +47,7 @@
                 <div class="about">
                     <h2>About me</h2>
                     <hr class="cs-hr cs-hr-mid" />
-                    <p style="margin-top: 5px">Hey! I'm Andrea, I'm 20 years old and I'm a CS student in Milan.</p>
+                    <p style="margin-top: 5px">Hey! I'm Andrea, I'm <span id="age">?</span> years old and I'm a CS student in Milan.</p>
                     <p>You can find my work in the <a href="#" onclick="document.getElementById('tabtwo').click(); return false;">Projects</a> tab above, including <!--full-stack applications, -->small open source projects and personal configs. I'm interested in low-level programming, cybersecurity and machine learning. </p>
                     <p>In the <a href="#" onclick="document.getElementById('tabthree').click(); return false;">Essays</a> tab, I write about my interests outside of computer science, including geopolitics, economics, philosophy and music.</p>
                     <p>Feel free to reach out to me on <a href="https://x.com/a_rossetti_" target="_blank">X</a>.</p>
@@ -164,5 +164,23 @@
                 <p>Built with <a href="https://github.com/ekmas/cs16.css" target="_blank">cs16.css</a></p>
             </div>
         </footer>
+
+        <!-- script to automate age updates -->
+        <script>
+            function calculateAge(birthDate) {
+                const today = new Date();
+                let age = today.getFullYear() - birthDate.getFullYear();
+                const monthDiff = today.getMonth() - birthDate.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                return age;
+            }
+
+            const birthDate = new Date(2005, 3, 16); // Example: June 15, 1990
+            const age = calculateAge(birthDate);
+
+            document.getElementById('age').textContent = age;
+        </script>
     </body>
 </html>
