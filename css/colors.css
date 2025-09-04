@@ -1,0 +1,26 @@
+:root {
+    --background: #fff;
+    --text-color: #000;
+    --secondary-text: #666;
+    --sidebar-bg: #f7f7f7;
+    --sidebar-hover: #e7e7e7;
+    --sidebar-active-bg: #000;
+    --sidebar-active-text: #fff;
+    --border-color: #eee;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --accent-color: #17645c;
+}
+
+[data-theme="dark"] {
+    --background: #111;
+    --text-color: #fff;
+    --secondary-text: #bbb;
+    --sidebar-bg: #1e1e1e;
+    --sidebar-hover: #333;
+    --sidebar-active-bg: #fff;
+    --sidebar-active-text: #000;
+    --border-color: #444;
+    --shadow-color: rgba(255, 255, 255, 0.05);
+    --accent-color: #17645c;
+}
+
