@@ -1,7 +1,7 @@
 :root {
     --background: #fff;
     --text-color: #000;
-    --secondary-text: #666;
+    --secondary-text: #555;
     --sidebar-bg: #f7f7f7;
     --sidebar-hover: #e7e7e7;
     --sidebar-active-bg: #000;
@@ -14,7 +14,7 @@
 [data-theme="dark"] {
     --background: #111;
     --text-color: #fff;
-    --secondary-text: #bbb;
+    --secondary-text: #ccc;
     --sidebar-bg: #1e1e1e;
     --sidebar-hover: #333;
     --sidebar-active-bg: #fff;

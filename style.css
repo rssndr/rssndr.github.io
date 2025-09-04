@@ -24,6 +24,19 @@ main {
     max-width: 860px;
 }
 
+.site-footer {
+    text-align: center;
+    padding: 16px 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 32px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.site-footer p {
+    margin: 2px 0;
+}
+
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
@@ -200,8 +213,16 @@ html {
     height: 300px;
     object-fit: cover;
     border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: perspective(1000px) rotateY(0deg);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    backface-visibility: hidden;
 }
 
+.intro-image img:hover {
+    transform: perspective(1000px) rotateY(-10deg);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
 main h1 {
     font-size: 24px;
     font-weight: 600;
