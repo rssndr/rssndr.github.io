@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!sidebarPlaceholder) return;
 
     // Manually set base URL (update this for your site)
-    const baseURL = 'file:///home/rssndr/projects/website/'; // Change to your actual base URL
+    const baseURL = 'https://rssndr.github.io/'; // Change to your actual base URL
 
     // Define the sidebar HTML with manual base URL
     const sidebarHTML = `
@@ -42,3 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
