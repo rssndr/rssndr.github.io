@@ -22,6 +22,39 @@ main {
     margin-left: 400px;
     padding: 48px 32px;
     max-width: 860px;
+    min-height: calc(100vh - 104px);
+}
+
+main h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+main h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+main p, main ul {
+    font-size: 15px;
+    color: var(--secondary-text);
+}
+
+main img {
+    width: 100%;
+    height: auto;
+    margin-top: 16px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-left: 0;
+        padding: 24px 16px;
+        max-width: none;
+    }
 }
 
 .site-footer {
@@ -223,29 +256,6 @@ html {
     transform: perspective(1000px) rotateY(-10deg);
     box-shadow: 0 8px 16px var(--shadow-color);
 }
-main h1 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-
-main h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-main p, main ul {
-    font-size: 15px;
-    color: var(--secondary-text);
-}
-
-main img {
-    width: 100%;
-    height: auto;
-    margin-top: 16px;
-    border-radius: 4px;
-}
 
 @media (max-width: 768px) {
     .sidebar {
@@ -260,11 +270,6 @@ main img {
     .intro-image img {
         width: 100%;
         height: auto;
-    }
-    main {
-        margin-left: 0;
-        padding: 24px 16px;
-        max-width: none;
     }
 }
 
@@ -412,5 +417,71 @@ main img {
 .social-link:hover {
     color: var(--accent-color);
     text-decoration: underline;
+}
+
+
+
+/* ******* */
+/* WRITING */
+/* ******* */
+
+/* Page Container with Grid */
+.page-container {
+    margin-left: 280px; /* Offset for fixed left sidebar */
+    padding: 20px;
+}
+
+.article-sidebar {
+    position: fixed;
+    left: 280px;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    overflow-y: auto;
+    border-left: 1px solid var(--secondary-text);
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.article-sidebar-header h2 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.article-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article-list li {
+    margin-bottom: 8px;
+}
+
+.article-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.article-list a:hover {
+    background: var(--sidebar-hover);
+}
+
+.article-list a.active {
+    background: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+}
+
+.article-content {
+    width: 100%;
 }
 
