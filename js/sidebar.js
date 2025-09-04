@@ -2,10 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarPlaceholder = document.getElementById('sidebar-placeholder');
     if (!sidebarPlaceholder) return;
 
-    // Manually set base URL (update this for your site)
-    const baseURL = 'https://rssndr.github.io/'; // Change to your actual base URL
+    const baseURL = '/';
 
-    // Define the sidebar HTML with manual base URL
     const sidebarHTML = `
         <div class="sidebar-header">
             <h1>Andrea Rossetti</h1>
