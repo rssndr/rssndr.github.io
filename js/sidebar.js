@@ -31,36 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Insert the main sidebar
     sidebarPlaceholder.innerHTML = sidebarHTML;
 
-    // Second sidebar for writing.html
+    // Get current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    if (currentPage === 'writing.html') {
-        const articleSidebar = document.createElement('nav');
-        articleSidebar.className = 'article-sidebar';
-        articleSidebar.innerHTML = `
-            <div class="article-sidebar-header">
-                <h2>Articles</h2>
-            </div>
-            <ul class="article-list">
-                <li><a href="#article1">The Impact of AI on Politics</a></li>
-                <li><a href="#article2">Cultural Shifts in the Digital Age</a></li>
-                <li><a href="#article3">NGO Perspectives on Global Issues</a></li>
-            </ul>
-        `;
-        document.body.appendChild(articleSidebar);
-
-        // Highlight active article (basic example; enhance with real URLs or IDs)
-        const articleLinks = articleSidebar.querySelectorAll('.article-list a');
-        articleLinks.forEach(link => {
-            if (window.location.hash === link.getAttribute('href')) {
-                link.classList.add('active');
-            }
-        });
-    }
 
     // Set active class for main sidebar
     const menuItems = sidebarPlaceholder.querySelectorAll('li[data-page]');
     menuItems.forEach(item => {
-        if (item.getAttribute('data-page') === currentPage) {
+        const page = item.getAttribute('data-page');
+        if (page === currentPage || (page === 'writing.html' && currentPage.startsWith('essay'))) {
             item.classList.add('active');
         }
     });
