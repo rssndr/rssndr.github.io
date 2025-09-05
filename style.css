@@ -500,7 +500,7 @@ html {
     margin-left: auto;
 }
 
-.article-list a:hover .article-arrow {
+.article-list li:hover .article-arrow {
     color: var(--accent-color);
 }
 
