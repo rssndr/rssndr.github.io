@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
         <div class="section-title">Projects</div>
         <ul class="sub-menu">
-            <li data-page="project1.html"><a href="${baseURL}project1.html"><i class="fas fa-campground"></i> Web Dev Portfolio Site</a></li>
-            <li data-page="project2.html"><a href="${baseURL}project2.html"><i class="fas fa-robot"></i> AI Chatbot Prototype</a></li>
-            <li data-page="project3.html"><a href="${baseURL}project3.html"><i class="fas fa-chart-bar"></i> Data Analysis Dashboard</a></li>
+            <li data-page="project1.html"><a href="${baseURL}projects/project1.html"><i class="fas fa-campground"></i> Web Dev Portfolio Site</a></li>
+            <li data-page="project2.html"><a href="${baseURL}projects/project2.html"><i class="fas fa-robot"></i> AI Chatbot Prototype</a></li>
+            <li data-page="project3.html"><a href="${baseURL}projects/project3.html"><i class="fas fa-chart-bar"></i> Data Analysis Dashboard</a></li>
         </ul>
         <div class="section-title">Online</div>
         <ul class="sub-menu link">
             <li><a href="https://x.com/rssndr" target="_blank"><i class="fa-brands fa-x-twitter"></i> X</a></li>
-            <li><a href="https://instagram.com/rssndr05" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
             <li><a href="https://github.com/rssndr" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="mailto:rossettiandrea@proton.me" target="_blank"><i class="fa-solid fa-envelope"></i> Email</a></li>
         </ul>
     `;
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuItems = sidebarPlaceholder.querySelectorAll('li[data-page]');
     menuItems.forEach(item => {
         const page = item.getAttribute('data-page');
-        if (page === currentPage || (page === 'writing.html' && currentPage.startsWith('essay'))) {
+        if (page === currentPage) {
             item.classList.add('active');
         }
     });
