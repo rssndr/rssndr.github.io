@@ -1,27 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About - Andrea Rossetti</title>
-        <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    </head>
-    <body>
-        <nav id="sidebar-placeholder" class="sidebar"></nav>
-        <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
-        <main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Andrea Rossetti</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <nav id="sidebar-placeholder" class="sidebar"></nav>
+    <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+    <main>
+        <div class="main-content">
+            <h1>About Me</h1>
 
-            <footer class="site-footer">
-                <p>Built with HTML, CSS & JS</p>
-                <p>&copy; 2025 Andrea Rossetti</p>
-            </footer>
-        </main>
+            <div class="section bio-section">
+                <div class="bio-text">
+                    <p>Hey, I'm Andrea, a Computer Science student from Milan, Italy, with a passion for blending technology, politics, and cultural advocacy.</p>
+                    <p>Growing up in a vibrant city like Milan, I've always been drawn to how digital tools can drive social change. As the Head of Tech at Ave Europa, a pan-European political movement, I lead a team in building scalable IT infrastructure, websites, and tools that promote a strong, democratic federal Europe. My work focuses on efficiency, security, and innovation to support grassroots activism across borders.</p>
+                    <p>I'm also deeply involved with Associazione Anahita, an Iranian association in Italy dedicated to preserving Iran's rich cultural heritage while aiding the fight for freedom and democracy. This role has taught me the power of technology in amplifying voices and fostering community resilience.</p>
+                    <p>Beyond my professional life, I enjoy exploring AI's ethical implications, contributing to open-source projects, and traveling to understand diverse perspectives. I'm committed to using tech for good, whether through coding political bots or analyzing NGO data.</p>
+                    <!-- Expand with more p here -->
+                </div>
+            </div>
 
-        <script src="../js/sidebar.js"></script>
-        <script src="../js/theme-toggle.js"></script>
-        <button id="back-to-top" title="Back to Top">↑</button>
-        <script src="../js/back-to-top.js"></script>
-    </body>
+            <div class="section experience-section">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Head of Tech, Ave Europa</h3>
+                            <span class="timeline-date">2023 - Present</span>
+                            <p>Leading the development of IT tools, infrastructure, and websites for a pan-European political movement. Focused on scalability, security, and enabling democratic engagement.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Member, Associazione Anahita</h3>
+                            <span class="timeline-date">2022 - Present</span>
+                            <p>Contributing to cultural preservation and advocacy for Iranian democracy through tech-driven initiatives and community support.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Computer Science Student, University of Milan</h3>
+                            <span class="timeline-date">2021 - Present</span>
+                            <p>Pursuing a degree with a focus on AI, web development, and data analysis. Involved in various academic projects exploring tech's societal impact.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section skills-section">
+                <h2>Skills</h2>
+                <div class="grid-layout">
+                    <div class="grid-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                        <p>HTML, CSS, JavaScript, React</p>
+                    </div>
+                    <div class="grid-item">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI & ML</h3>
+                        <p>Python, TensorFlow, NLP</p>
+                    </div>
+                    <div class="grid-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Data Analysis</h3>
+                        <p>Pandas, Matplotlib, SQL</p>
+                    </div>
+                    <div class="grid-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Security & Infrastructure</h3>
+                        <p>Cloud Services, Encryption, Scalable Systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <p>Built with HTML, CSS & JS</p>
+            <p>© 2025 Andrea Rossetti</p>
+        </footer>
+    </main>
+
+    <button id="back-to-top">↑</button>
+
+    <script src="../js/theme-toggle.js"></script>
+    <script src="../js/back-to-top.js"></script>
+    <script src="../js/sidebar.js"></script>
+</body>
 </html>
 

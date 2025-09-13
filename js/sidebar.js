@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="section-title">Online</div>
         <ul class="sub-menu link">
             <li><a href="https://x.com/rssndr" target="_blank"><i class="fa-brands fa-x-twitter"></i> X</a></li>
+            <li><a href="https://www.linkedin.com/in/andrea-rossetti-092161384/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
             <li><a href="https://github.com/rssndr" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
             <li><a href="mailto:rossettiandrea@proton.me" target="_blank"><i class="fa-solid fa-envelope"></i> Email</a></li>
         </ul>
