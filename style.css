@@ -436,20 +436,42 @@ html {
     text-decoration: underline;
 }
 
-.intro-image img {
+.intro-image {
+    position: relative;
     width: 300px;
-    height: 300px;
-    object-fit: cover;
+    aspect-ratio: 1 / 1; /* Forces square shape based on width, like original 300x300 */
+    flex-shrink: 0;
+    perspective: 1000px;
     border-radius: 50%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform: perspective(1000px) rotateY(0deg);
-    box-shadow: 0 4px 8px var(--shadow-color);
-    backface-visibility: hidden;
+    overflow: hidden;
 }
 
-.intro-image img:hover {
-    transform: perspective(1000px) rotateY(-10deg);
-    box-shadow: 0 8px 16px var(--shadow-color);
+.flipper {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.intro-image:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    clip-path: circle(50%); /* Keeps rounding if needed for edges */
+    background-size: cover;
+    background-position: center top; /* Shifts image up to fix "lower position"—adjust % if needed, e.g., center 30% */
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 4px 8px var(--shadow-color)); /* Shape-following shadow */
+}
+
+.back {
+    transform: rotateY(180deg);
 }
 
 .pin-icon {
@@ -485,7 +507,7 @@ html {
     .intro-container {
         flex-direction: column;
     }
-    .intro-image img {
+    .intro-image {
         width: 100%;
         height: auto;
     }
