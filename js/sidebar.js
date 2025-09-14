@@ -4,29 +4,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const baseURL = '/';
 
-    const sidebarHTML = `
-        <div class="sidebar-header">
-            <h1>Andrea Rossetti</h1>
-        </div>
-        <ul class="menu">
-            <li data-page="index.html"><a href="${baseURL}index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li data-page="writing.html"><a href="${baseURL}pages/writing.html"><i class="fas fa-pencil-alt"></i> Writing</a></li>
-            <li data-page="about.html"><a href="${baseURL}pages/about.html"><i class="fas fa-user-tie"></i> About</a></li>
-            <li data-page="bookmarks.html"><a href="${baseURL}pages/bookmarks.html"><i class="fas fa-bookmark"></i> Bookmarks</a></li>
-        </ul>
+    // Define menu items as arrays for easier expansion
+    const mainMenu = [
+        { page: 'index.html', icon: 'fas fa-home', text: 'Home', href: `${baseURL}index.html` },
+        { page: 'writing.html', icon: 'fas fa-pencil-alt', text: 'Writing', href: `${baseURL}pages/writing.html` },
+        { page: 'about.html', icon: 'fas fa-user-tie', text: 'About', href: `${baseURL}pages/about.html` },
+        { page: 'bookmarks.html', icon: 'fas fa-bookmark', text: 'Bookmarks', href: `${baseURL}pages/bookmarks.html` },
+    ];
+
+    const projectsMenu = [
+        { page: 'project1.html', icon: 'fas fa-campground', text: 'Web Dev Portfolio Site', href: `${baseURL}projects/project1.html` },
+        { page: 'project2.html', icon: 'fas fa-robot', text: 'AI Chatbot Prototype', href: `${baseURL}projects/project2.html` },
+        { page: 'project3.html', icon: 'fas fa-chart-bar', text: 'Data Analysis Dashboard', href: `${baseURL}projects/project3.html` },
+    ];
+
+    const onlineMenu = [
+        { icon: 'fa-brands fa-x-twitter', text: 'X', href: 'https://x.com/rssndr', target: '_blank' },
+        { icon: 'fa-brands fa-linkedin', text: 'LinkedIn', href: 'https://www.linkedin.com/in/andrea-rossetti-092161384/', target: '_blank' },
+        { icon: 'fab fa-github', text: 'GitHub', href: 'https://github.com/rssndr', target: '_blank' },
+        { icon: 'fa-solid fa-envelope', text: 'Email', href: 'mailto:rossettiandrea@proton.me', target: '_blank' },
+    ];
+
+    // Generate HTML from arrays
+    const generateMenuHTML = (items, className = 'menu', isLink = false) => {
+        return `<ul class="${className}${isLink ? ' link' : ''}">
+            ${items.map(item => `
+                <li data-page="${item.page || ''}">
+                    <a href="${item.href}"${item.target ? ` target="${item.target}"` : ''}>
+                        <i class="${item.icon}"></i> ${item.text}
+                    </a>
+                </li>
+            `).join('')}
+        </ul>`;
+    };
+
+    const isMobile = window.innerWidth <= 768;
+
+    let sidebarHTML = '';
+    if (!isMobile) {
+        sidebarHTML += `
+            <div class="sidebar-header">
+                <h1>Andrea Rossetti</h1>
+            </div>
+        `;
+    }
+    sidebarHTML += `
+        ${generateMenuHTML(mainMenu)}
         <div class="section-title">Projects</div>
-        <ul class="sub-menu">
-            <li data-page="project1.html"><a href="${baseURL}projects/project1.html"><i class="fas fa-campground"></i> Web Dev Portfolio Site</a></li>
-            <li data-page="project2.html"><a href="${baseURL}projects/project2.html"><i class="fas fa-robot"></i> AI Chatbot Prototype</a></li>
-            <li data-page="project3.html"><a href="${baseURL}projects/project3.html"><i class="fas fa-chart-bar"></i> Data Analysis Dashboard</a></li>
-        </ul>
+        ${generateMenuHTML(projectsMenu, 'sub-menu')}
         <div class="section-title">Online</div>
-        <ul class="sub-menu link">
-            <li><a href="https://x.com/rssndr" target="_blank"><i class="fa-brands fa-x-twitter"></i> X</a></li>
-            <li><a href="https://www.linkedin.com/in/andrea-rossetti-092161384/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-            <li><a href="https://github.com/rssndr" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-            <li><a href="mailto:rossettiandrea@proton.me" target="_blank"><i class="fa-solid fa-envelope"></i> Email</a></li>
-        </ul>
+        ${generateMenuHTML(onlineMenu, 'sub-menu', true)}
     `;
 
     // Insert the main sidebar
@@ -43,5 +70,63 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add('active');
         }
     });
+
+    // Mobile-specific: Insert mobile header if on mobile
+    if (isMobile) {
+        const mobileHeaderHTML = `
+            <header class="mobile-header">
+                <span class="mobile-name">Andrea Rossetti</span>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </header>
+        `;
+        document.body.insertAdjacentHTML('afterbegin', mobileHeaderHTML);
+
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const themeToggle = document.querySelector('#theme-toggle');
+        const mainElement = document.querySelector('main');
+        const margin = 16; // Consistent margin
+
+        const headerHeight = document.querySelector('.mobile-header').offsetHeight;
+
+        // Initial positioning when closed, with margin
+        if (mainElement) {
+            mainElement.style.paddingTop = `${headerHeight}px`;
+        }
+        if (themeToggle) {
+            themeToggle.style.top = `${headerHeight + margin}px`;
+        }
+
+        if (menuToggle && sidebar && mainElement && themeToggle) {
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+                sidebar.setAttribute('aria-hidden', !sidebar.classList.contains('open'));
+
+                // Push content down by setting padding on main
+                if (sidebar.classList.contains('open')) {
+                    const sidebarHeight = sidebar.offsetHeight;
+                    mainElement.style.paddingTop = `${headerHeight + sidebarHeight}px`;
+                    themeToggle.style.top = `${headerHeight + sidebarHeight + margin}px`;
+                } else {
+                    mainElement.style.paddingTop = `${headerHeight}px`;
+                    themeToggle.style.top = `${headerHeight + margin}px`;
+                }
+            });
+            // Start closed
+            sidebar.classList.remove('open');
+            sidebar.setAttribute('aria-hidden', 'true');
+        }
+
+        // Scroll listener for sticky
+        if (themeToggle) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > headerHeight) {
+                    themeToggle.classList.add('sticky');
+                } else {
+                    themeToggle.classList.remove('sticky');
+                }
+            });
+        }
+    }
 });
 
