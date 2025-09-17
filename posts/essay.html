@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loading... - Andrea Rossetti</title> <!-- Default; JS overrides -->
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    </head>
+    <body>
+        <nav id="sidebar-placeholder" class="sidebar"></nav>
+        <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+        <main>
+            <div class="main-content">
+                <div class="section body-section" id="post-content">
+                    <!-- Markdown rendered here -->
+                </div>
+            </div>
+
+            <footer class="site-footer">
+                <p>Built with HTML, CSS & JS</p>
+                <p>© 2025 Andrea Rossetti</p>
+            </footer>
+        </main>
+
+        <button id="back-to-top">↑</button>
+
+        <script src="../js/sidebar.js"></script>
+        <script src="../js/theme-toggle.js"></script>
+        <script src="../js/back-to-top.js"></script>
+
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            if (id) {
+                fetch(`${id}.md`)
+                    .then(response => response.text())
+                    .then(md => {
+                        // Extract title from first # line
+                        const titleMatch = md.match(/^# (.*)/);
+                        const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
+                        document.title = `${title} - Andrea Rossetti`;
+
+                        // Render full Markdown
+                        document.getElementById('post-content').innerHTML = marked.parse(md);
+                    })
+                    .catch(error => console.error('Error loading Markdown:', error));
+            } else {
+                document.getElementById('post-content').innerHTML = '<p>Error: No post ID provided.</p>';
+            }
+        </script>
+    </body>
+</html>
+

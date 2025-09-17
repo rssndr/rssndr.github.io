@@ -13,8 +13,8 @@
         <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
         <main>
             <div class="main-content">
-                <h1>Writing</h1>
-                <p>Explore my thoughts on technology, politics, and society.</p>
+                <h1>Projects</h1>
+                <p>Check out my projects!</p>
 
                 <ul class="item-list" id="posts-list">
                     <!-- JS generates list -->
@@ -33,12 +33,12 @@
         <script src="../js/back-to-top.js"></script>
         <script src="../js/sidebar.js"></script>
         <script>
-            const postIds = ['essay1', 'essay2', 'essay3']; // to be updated
+            const postIds = ['project1', 'project2', 'project3']; // to be updated
 
             const listContainer = document.getElementById('posts-list');
 
             postIds.forEach(id => {
-                fetch(`../posts/${id}.md`)
+                fetch(`../projects/${id}.md`)
                     .then(response => response.text())
                     .then(md => {
                         // Extract title from first # line
@@ -52,7 +52,7 @@
                         // Create list item
                         const li = document.createElement('li');
                         li.innerHTML = `
-                            <a href="../posts/essay.html?id=${id}">
+                            <a href="../projects/project.html?id=${id}">
                                 <span class="item-title">${title}</span>
                                 <span class="item-subtitle">${subtitle}</span>
                                 <span class="item-arrow">→</span>
