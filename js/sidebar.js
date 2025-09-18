@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const projectsMenu = [
-        { page: 'project1.html', icon: 'fas fa-campground', text: 'Web Dev Portfolio Site', href: `${baseURL}projects/project1.html` },
-        { page: 'project2.html', icon: 'fas fa-robot', text: 'AI Chatbot Prototype', href: `${baseURL}projects/project2.html` },
-        { page: 'project3.html', icon: 'fas fa-chart-bar', text: 'Data Analysis Dashboard', href: `${baseURL}projects/project3.html` },
+        { page: 'project1.html', icon: 'fas fa-campground', text: 'Web Dev Portfolio Site', href: `${baseURL}projects/project.html?id=project1` },
+        { page: 'project2.html', icon: 'fas fa-robot', text: 'AI Chatbot Prototype', href: `${baseURL}projects/project.html?id=project2` },
+        { page: 'project3.html', icon: 'fas fa-chart-bar', text: 'Data Analysis Dashboard', href: `${baseURL}projects/project.html?id=project3` },
     ];
 
     const onlineMenu = [
