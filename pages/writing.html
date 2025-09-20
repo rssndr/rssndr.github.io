@@ -32,8 +32,9 @@
         <script src="../js/theme-toggle.js"></script>
         <script src="../js/back-to-top.js"></script>
         <script src="../js/sidebar.js"></script>
+
         <script>
-            const postIds = ['essay1', 'essay2', 'essay3']; // to be updated
+            const postIds = ['post1', 'post2', 'post3']; // to be updated
 
             const listContainer = document.getElementById('posts-list');
 
@@ -52,7 +53,7 @@
                         // Create list item
                         const li = document.createElement('li');
                         li.innerHTML = `
-                            <a href="../posts/essay.html?id=${id}">
+                            <a href="../posts/post.html?id=${id}">
                                 <span class="item-title">${title}</span>
                                 <span class="item-subtitle">${subtitle}</span>
                                 <span class="item-arrow">→</span>
@@ -63,6 +64,8 @@
                     .catch(error => console.error(`Error loading ${id}.md:`, error));
             });
         </script>
+
+        <script data-goatcounter="https://andrearossetti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>
 

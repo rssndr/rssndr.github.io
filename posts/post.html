@@ -37,19 +37,27 @@
                 fetch(`${id}.md`)
                     .then(response => response.text())
                     .then(md => {
-                        // Extract title from first # line
                         const titleMatch = md.match(/^# (.*)/);
                         const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
                         document.title = `${title} - Andrea Rossetti`;
 
-                        // Render full Markdown
                         document.getElementById('post-content').innerHTML = marked.parse(md);
+
+                        if (window.goatcounter) {
+                            window.goatcounter.count({
+                                path: `/posts/${id}`,
+                                title: title,
+                                event: true
+                            });
+                        }
                     })
                     .catch(error => console.error('Error loading Markdown:', error));
             } else {
                 document.getElementById('post-content').innerHTML = '<p>Error: No post ID provided.</p>';
             }
         </script>
+
+        <script data-goatcounter="https://andrearossetti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>
 
