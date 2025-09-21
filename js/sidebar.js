@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const projectsMenu = [
-        { page: 'project1.html', icon: 'fas fa-campground', text: 'Web Dev Portfolio Site', href: `${baseURL}projects/project.html?id=project1` },
-        { page: 'project2.html', icon: 'fas fa-robot', text: 'AI Chatbot Prototype', href: `${baseURL}projects/project.html?id=project2` },
-        { page: 'project3.html', icon: 'fas fa-chart-bar', text: 'Data Analysis Dashboard', href: `${baseURL}projects/project.html?id=project3` },
+        { page: 'micrograd-c', icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c', href: `${baseURL}projects/project.html?id=micrograd-c` },
+        { page: 'tcp-server', icon: 'fa-solid fa-network-wired', text: 'TCP Server', href: `${baseURL}projects/project.html?id=tcp-server` },
+        { page: 'website', icon: 'fa-solid fa-window-maximize', text: 'Personal Website', href: `${baseURL}projects/project.html?id=website` },
     ];
 
     const onlineMenu = [
