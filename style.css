@@ -570,6 +570,83 @@ html {
     text-decoration: underline;
 }
 
+/* Markdown post content */
+#post-content {
+    line-height: 1.6;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+#post-content p {
+    margin-bottom: 16px;
+}
+
+#post-content a {
+    color: var(--secondary-color);
+    text-decoration: underline 1px;
+    text-underline-offset: 1.5px;
+    transition: color 0.2s;
+}
+
+#post-content a:hover {
+    color: var(--accent-color);
+    text-decoration: underline 2px;
+}
+
+#post-content ul, #post-content ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+#post-content li {
+    margin-bottom: 8px;
+}
+
+#post-content h1, #post-content h2, #post-content h3 {
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+#post-content h1 {
+    font-size: 24px;
+}
+
+#post-content h2 {
+    font-size: 20px;
+}
+
+#post-content h3 {
+    font-size: 18px;
+}
+
+#post-content code {
+    background: var(--border-color);
+    color: var(--accent-color);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#post-content pre {
+    background: var(--sidebar-bg);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 16px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+#post-content pre code {
+    background: none;
+    padding: 0;
+    color: var(--text-color);
+}
+
+/* Mobile-specific styling */
 @media (max-width: 768px) {
     .intro-container {
         flex-direction: column;
@@ -597,7 +674,6 @@ html {
     .item-list li {
         flex-direction: column;
         align-items: flex-start;
-        
     }
 
     .item-arrow {
