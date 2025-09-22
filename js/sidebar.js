@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Define menu items as arrays for easier expansion
     const mainMenu = [
         { page: 'index.html', icon: 'fas fa-home', text: 'Home', href: `${baseURL}index.html` },
-        { page: 'writing.html', icon: 'fas fa-pencil-alt', text: 'Writing', href: `${baseURL}pages/writing.html` },
+        //{ page: 'writing.html', icon: 'fas fa-pencil-alt', text: 'Writing', href: `${baseURL}pages/writing.html` },
         { page: 'about.html', icon: 'fas fa-user-tie', text: 'About', href: `${baseURL}pages/about.html` },
         { page: 'bookmarks.html', icon: 'fas fa-bookmark', text: 'Bookmarks', href: `${baseURL}pages/bookmarks.html` },
     ];
