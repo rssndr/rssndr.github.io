@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>`;
     };
 
-    const isMobile = window.innerWidth <= 1024;
+    const isMobile = window.innerWidth <= 1144;
 
     let sidebarHTML = '';
     if (!isMobile) {

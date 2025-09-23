@@ -663,7 +663,7 @@ html {
     }
 }
 
-@media (max-width: 1167px) and (min-width: 1144px) {
+@media (max-width: 1167px) and (min-width: 1145px) {
     main {
         margin-left: calc(280px + 64px);
         margin-right: 64px;
@@ -676,7 +676,7 @@ html {
     }
 }
 
-@media (max-width: 1143px) and (min-width: 865px) {
+@media (max-width: 1144px) and (min-width: 865px) {
     .sidebar {
         position: fixed;
         top: 0;
@@ -724,7 +724,21 @@ html {
 
 @media (max-width: 864px) {
     .sidebar {
-        display: none; /* Ensure sidebar remains hidden */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        padding: 16px;
+        display: none; /* Hidden by default */
+    }
+
+    .sidebar.open {
+        display: block; /* Allow sidebar to show when open */
+        transform: translateY(48px);
     }
 
     .intro-container {
@@ -748,10 +762,10 @@ html {
     }
 
     main {
-        margin-left: 32px;
-        margin-right: 32px;
+        margin-left: 16px;
+        margin-right: 16px;
         padding: 80px 32px 20px;
-        width: calc(100vw - 64px);
+        width: calc(100vw - 32px);
         max-width: none;
         display: flex;
         flex-direction: column;
@@ -762,7 +776,6 @@ html {
 
     .main-content {
         gap: 32px;
-        padding: 0 32px;
     }
 
     .item-list li {
@@ -773,7 +786,7 @@ html {
     .item-list a {
         flex-direction: column;
         align-items: flex-start;
-        padding: 0;
+        padding: 0 16px;
     }
 
     .item-title {
