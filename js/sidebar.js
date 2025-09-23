@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>`;
     };
 
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 1024;
 
     let sidebarHTML = '';
     if (!isMobile) {
@@ -78,23 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="mobile-name">Andrea Rossetti</span>
                 <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
             </header>
-        `;
+            `;
         document.body.insertAdjacentHTML('afterbegin', mobileHeaderHTML);
+
+        const mobileHeader = document.querySelector('.mobile-header');
+        if (mobileHeader) {
+            mobileHeader.style.display = 'flex';
+        }
 
         const menuToggle = document.querySelector('.mobile-menu-toggle');
         const sidebar = document.querySelector('.sidebar');
         const themeToggle = document.querySelector('#theme-toggle');
         const mainElement = document.querySelector('main');
-        const margin = 16; // Consistent margin
+        const margin = 16;
 
         const headerHeight = document.querySelector('.mobile-header').offsetHeight;
 
-        // Initial positioning when closed, with margin
-        if (mainElement) {
-            mainElement.style.paddingTop = `${headerHeight}px`;
-        }
-        if (themeToggle) {
-            themeToggle.style.top = `${headerHeight + margin}px`;
+        if (window.innerWidth <= 1144) {
+            if (mainElement) mainElement.style.paddingTop = `${headerHeight}px`;
+            if (themeToggle) themeToggle.style.top = `${headerHeight + margin}px`;
         }
 
         if (menuToggle && sidebar && mainElement && themeToggle) {
@@ -102,22 +104,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 sidebar.classList.toggle('open');
                 sidebar.setAttribute('aria-hidden', !sidebar.classList.contains('open'));
 
-                // Push content down by setting padding on main
-                if (sidebar.classList.contains('open')) {
-                    const sidebarHeight = sidebar.offsetHeight;
-                    mainElement.style.paddingTop = `${headerHeight + sidebarHeight}px`;
-                    themeToggle.style.top = `${headerHeight + sidebarHeight + margin}px`;
-                } else {
-                    mainElement.style.paddingTop = `${headerHeight}px`;
-                    themeToggle.style.top = `${headerHeight + margin}px`;
+                if (window.innerWidth <= 1144) {
+                    if (sidebar.classList.contains('open')) {
+                        const sidebarHeight = sidebar.offsetHeight;
+                        mainElement.style.paddingTop = `${headerHeight + sidebarHeight}px`;
+                        themeToggle.style.top = `${headerHeight + sidebarHeight + margin}px`;
+                    } else {
+                        mainElement.style.paddingTop = `${headerHeight}px`;
+                        themeToggle.style.top = `${headerHeight + margin}px`;
+                    }
                 }
             });
-            // Start closed
             sidebar.classList.remove('open');
             sidebar.setAttribute('aria-hidden', 'true');
         }
 
-        // Scroll listener for sticky
         if (themeToggle) {
             window.addEventListener('scroll', () => {
                 if (window.scrollY > headerHeight) {
