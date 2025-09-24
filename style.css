@@ -464,12 +464,13 @@ html {
 
 .intro-image {
     position: relative;
-    width: 300px;
+    width: 280px;
     aspect-ratio: 1/1;
     flex-shrink: 0;
     perspective: 1000px;
     border-radius: 50%;
-    overflow: hidden;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .flipper {
