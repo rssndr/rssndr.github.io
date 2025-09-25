@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsMenu = [
         { page: 'micrograd-c', icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c', href: `${baseURL}projects/project.html?id=micrograd-c` },
         { page: 'tcp-server', icon: 'fa-solid fa-network-wired', text: 'TCP Server', href: `${baseURL}projects/project.html?id=tcp-server` },
-        { page: 'website', icon: 'fa-solid fa-window-maximize', text: 'Personal Website', href: `${baseURL}projects/project.html?id=website` },
+        { page: 'vps', icon: 'fa-solid fa-server', text: 'VPS Hosting Setup', href: `${baseURL}projects/project.html?id=vps` },
     ];
 
     const onlineMenu = [
