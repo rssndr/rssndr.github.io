@@ -4,18 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const baseURL = '/';
 
-    // Define menu items as arrays for easier expansion
+    // Define menu items with clean hrefs
     const mainMenu = [
-        { page: 'index.html', icon: 'fas fa-home', text: 'Home', href: `${baseURL}index.html` },
-        //{ page: 'writing.html', icon: 'fas fa-pencil-alt', text: 'Writing', href: `${baseURL}pages/writing.html` },
-        { page: 'about.html', icon: 'fas fa-user-tie', text: 'About', href: `${baseURL}pages/about.html` },
-        { page: 'bookmarks.html', icon: 'fas fa-bookmark', text: 'Bookmarks', href: `${baseURL}pages/bookmarks.html` },
+        { page: 'index.html', icon: 'fas fa-home', text: 'Home', href: '/' },
+        { page: 'about.html', icon: 'fas fa-user-tie', text: 'About', href: '/about' },
+        { page: 'bookmarks.html', icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/bookmarks' },
     ];
 
     const projectsMenu = [
-        { page: 'micrograd-c', icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c', href: `${baseURL}projects/project.html?id=micrograd-c` },
-        { page: 'tcp-server', icon: 'fa-solid fa-network-wired', text: 'TCP Server', href: `${baseURL}projects/project.html?id=tcp-server` },
-        { page: 'vps', icon: 'fa-solid fa-server', text: 'VPS Hosting Setup', href: `${baseURL}projects/project.html?id=vps` },
+        { page: 'project.html', icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c', href: '/projects?id=micrograd-c' },
+        { page: 'project.html', icon: 'fa-solid fa-network-wired', text: 'TCP Server', href: '/projects?id=tcp-server' },
+        { page: 'project.html', icon: 'fa-solid fa-server', text: 'VPS Hosting Setup', href: '/projects?id=vps' },
     ];
 
     const onlineMenu = [
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { icon: 'fa-solid fa-envelope', text: 'Email', href: 'mailto:rossettiandrea@proton.me', target: '_blank' },
     ];
 
-    // Generate HTML from arrays
+    // Generate HTML from arrays (unchanged)
     const generateMenuHTML = (items, className = 'menu', isLink = false) => {
         return `<ul class="${className}${isLink ? ' link' : ''}">
             ${items.map(item => `
@@ -48,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
     }
+
     sidebarHTML += `
         ${generateMenuHTML(mainMenu)}
         <div class="section-title">Projects</div>
@@ -56,11 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ${generateMenuHTML(onlineMenu, 'sub-menu', true)}
     `;
 
-    // Insert the main sidebar
     sidebarPlaceholder.innerHTML = sidebarHTML;
 
-    // Get current page
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    // Updated currentPage detection for pretty URLs
+    let currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentPage !== 'index.html' && !currentPage.endsWith('.html')) {
+        currentPage += '.html';
+    }
 
     // Set active class for main sidebar
     const menuItems = sidebarPlaceholder.querySelectorAll('li[data-page]');
