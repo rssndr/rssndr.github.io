@@ -3,7 +3,7 @@
 Website & Cloud, Self-Hosted in Europe
 
 ## Overview
-I set up a personal VPS on Hetzner Cloud, an EU-based provider, to host a Nextcloud instance for file sync, calendar, notes, and tasks, alongside my static website at `andrearossetti.me`. Docker containerizes the setup, AND an Nginx reverse proxy with Let’s Encrypt SSL secures access to both services.
+I set up a personal VPS on Hetzner Cloud, an EU-based provider, to host a Nextcloud instance for file sync, calendar, notes, and tasks, alongside my static website at `andrearossetti.me`. Docker containerizes the setup, and an Nginx reverse proxy with Let’s Encrypt SSL secures access to both services.
 
 ## Key Components
 - **Hetzner Cloud VPS**: An affordable, EU-based server.
@@ -21,5 +21,5 @@ I set up a personal VPS on Hetzner Cloud, an EU-based provider, to host a Nextcl
 - **SSL Security**: Obtained a Let’s Encrypt certificate for all domains, ensuring secure access.
 
 ## Why This Setup?
-This open-source, lightweight solution on an EU server offers a private, personal alternative to commercial cloud services—and a hands-on way to learn about server management, containerization, secure web hosting, and open-source tools
+This open-source, lightweight solution on an EU server offers a private, personal alternative to commercial cloud services—and a hands-on way to learn about server management, containerization, secure web hosting and open-source tools.
 
