@@ -71,6 +71,14 @@
             // Trigger a fetch or let the page load naturally with the rewritten URL
             window.location.href = cleanUrl; // Ensure the page loads
         }
+
+        // Handle back button to reload or reset content
+        window.addEventListener('popstate', () => {
+            if (window.location.pathname === '/pages/projects.html') {
+                // Reload the page to restore original content
+                window.location.reload();
+            }
+        });
         </script>
 
         <script data-goatcounter="https://andrearossetti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
