@@ -31,30 +31,34 @@
         <script src="../js/back-to-top.js"></script>
 
         <script>
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get('id');
-            if (id) {
-                fetch(`${id}.md`)
-                    .then(response => response.text())
-                    .then(md => {
-                        const titleMatch = md.match(/^# (.*)/);
-                        const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
-                        document.title = `${title} - Andrea Rossetti`;
-
-                        document.getElementById('post-content').innerHTML = marked.parse(md);
-
-                        if (window.goatcounter) {
-                            window.goatcounter.count({
-                                path: `/projects/${id}`,
-                                title: title,
-                                event: true
-                            });
-                        }
-                    })
-                    .catch(error => console.error('Error loading Markdown:', error));
-            } else {
-                document.getElementById('post-content').innerHTML = '<p>Error: No post ID provided.</p>';
+        let id = new URLSearchParams(window.location.search).get('id');
+        if (!id) {
+            // Extract id from path if no query string
+            const pathParts = window.location.pathname.split('/');
+            if (pathParts.length > 2 && pathParts[1] === 'projects') {
+                id = pathParts[2];
             }
+        }
+        if (id) {
+            fetch(`/projects/${id}.md`)
+                .then(response => response.text())
+                .then(md => {
+                    const titleMatch = md.match(/^# (.*)/);
+                    const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
+                    document.title = `${title} - Andrea Rossetti`;
+                    document.getElementById('post-content').innerHTML = marked.parse(md);
+                    if (window.goatcounter) {
+                        window.goatcounter.count({
+                            path: `/projects/${id}`,
+                            title: title,
+                            event: true
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading Markdown:', error));
+        } else {
+            document.getElementById('post-content').innerHTML = '<p>Error: No post ID provided.</p>';
+        }
         </script>
     </body>
 </html>
