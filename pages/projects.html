@@ -34,35 +34,35 @@
         <script src="../js/sidebar.js"></script>
 
         <script>
-            const postIds = ['micrograd-c', 'tcp-server', 'vps']; // to be updated
+        const postIds = ['micrograd-c', 'tcp-server', 'vps']; // to be updated
 
-            const listContainer = document.getElementById('posts-list');
+        const listContainer = document.getElementById('posts-list');
 
-            postIds.forEach(id => {
-                fetch(`../projects/${id}.md`)
-                    .then(response => response.text())
-                    .then(md => {
-                        // Extract title from first # line
-                        const titleMatch = md.match(/^# (.*)/);
-                        const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
+        postIds.forEach(id => {
+            fetch(`../projects/${id}.md`)
+                .then(response => response.text())
+                .then(md => {
+                    // Extract title from first # line
+                    const titleMatch = md.match(/^# (.*)/);
+                    const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
 
-                        // Extract subtitle from first paragraph after title
-                        const subtitleMatch = md.match(/\n\n(.*?)\n/);
-                        const subtitle = subtitleMatch ? subtitleMatch[1].trim() : 'No description available';
+                    // Extract subtitle from first paragraph after title
+                    const subtitleMatch = md.match(/\n\n(.*?)\n/);
+                    const subtitle = subtitleMatch ? subtitleMatch[1].trim() : 'No description available';
 
-                        // Create list item
-                        const li = document.createElement('li');
-                        li.innerHTML = `
-                            <a href="../projects/project.html?id=${id}">
-                                <span class="item-title">${title}</span>
-                                <span class="item-subtitle">${subtitle}</span>
-                                <span class="item-arrow">→</span>
-                            </a>
-                        `;
-                        listContainer.appendChild(li);
-                    })
-                    .catch(error => console.error(`Error loading ${id}.md:`, error));
-            });
+                    // Create list item with clean URL
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <a href="/projects/${id}">
+                            <span class="item-title">${title}</span>
+                            <span class="item-subtitle">${subtitle}</span>
+                            <span class="item-arrow">→</span>
+                        </a>
+                    `;
+                    listContainer.appendChild(li);
+                })
+                .catch(error => console.error(`Error loading ${id}.md:`, error));
+        });
         </script>
 
         <script data-goatcounter="https://andrearossetti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

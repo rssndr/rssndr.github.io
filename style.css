@@ -67,6 +67,7 @@ main img {
 
 /* Back to Top Button */
 #back-to-top {
+    color: var(--text-color);
     position: fixed;
     bottom: 20px;
     right: 20px;
