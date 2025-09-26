@@ -35,6 +35,7 @@
 
         <script>
         const postIds = ['micrograd-c', 'tcp-server', 'vps']; // to be updated
+        let currentPage = window.location.pathname; // Track current page
 
         const listContainer = document.getElementById('posts-list');
 
@@ -42,15 +43,10 @@
             fetch(`../projects/${id}.md`)
                 .then(response => response.text())
                 .then(md => {
-                    // Extract title from first # line
                     const titleMatch = md.match(/^# (.*)/);
                     const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
-
-                    // Extract subtitle from first paragraph after title
                     const subtitleMatch = md.match(/\n\n(.*?)\n/);
                     const subtitle = subtitleMatch ? subtitleMatch[1].trim() : 'No description available';
-
-                    // Create list item with clean URL and click handler
                     const li = document.createElement('li');
                     li.innerHTML = `
                         <a href="/projects/${id}" onclick="redirectToCleanUrl(event, '/projects/${id}')">
@@ -64,22 +60,27 @@
                 .catch(error => console.error(`Error loading ${id}.md:`, error));
         });
 
-        // Function to handle clean URL redirect
         function redirectToCleanUrl(event, cleanUrl) {
-            event.preventDefault(); // Prevent default link behavior
-            window.history.pushState({}, document.title, cleanUrl); // Update URL without reload
-            // Trigger a fetch or let the page load naturally with the rewritten URL
-            window.location.href = cleanUrl; // Ensure the page loads
+            event.preventDefault();
+            currentPage = cleanUrl; // Update current page
+            window.location.href = cleanUrl; // Navigate
         }
 
-        // Handle back button to reload or reset content
-        window.addEventListener('popstate', () => {
-            console.log('popstate triggered, pathname:', window.location.pathname);
-            // Check if returning to the project list page (approximate with /projects or /pages/projects)
-            if (window.location.pathname === '/projects' || window.location.pathname === '/pages/projects' || window.location.pathname === '/pages/projects.html') {
-                console.log('Reloading project list page');
+        // Detect back navigation by comparing current and previous page
+        window.addEventListener('unload', () => {
+            // Store current page in sessionStorage before leaving
+            sessionStorage.setItem('previousPage', currentPage);
+        });
+
+        window.addEventListener('load', () => {
+            const previousPage = sessionStorage.getItem('previousPage');
+            console.log('load triggered, previousPage:', previousPage, 'currentPage:', window.location.pathname);
+            if (previousPage && previousPage.startsWith('/projects/') && window.location.pathname === '/pages/projects.html') {
+                console.log('Detected back to projects.html, reloading');
                 window.location.reload();
             }
+            // Reset for next navigation
+            sessionStorage.removeItem('previousPage');
         });
         </script>
 
