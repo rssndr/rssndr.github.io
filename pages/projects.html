@@ -50,10 +50,10 @@
                     const subtitleMatch = md.match(/\n\n(.*?)\n/);
                     const subtitle = subtitleMatch ? subtitleMatch[1].trim() : 'No description available';
 
-                    // Create list item with clean URL
+                    // Create list item with clean URL and click handler
                     const li = document.createElement('li');
                     li.innerHTML = `
-                        <a href="/projects/${id}">
+                        <a href="/projects/${id}" onclick="redirectToCleanUrl(event, '/projects/${id}')">
                             <span class="item-title">${title}</span>
                             <span class="item-subtitle">${subtitle}</span>
                             <span class="item-arrow">→</span>
@@ -63,6 +63,14 @@
                 })
                 .catch(error => console.error(`Error loading ${id}.md:`, error));
         });
+
+        // Function to handle clean URL redirect
+        function redirectToCleanUrl(event, cleanUrl) {
+            event.preventDefault(); // Prevent default link behavior
+            window.history.pushState({}, document.title, cleanUrl); // Update URL without reload
+            // Trigger a fetch or let the page load naturally with the rewritten URL
+            window.location.href = cleanUrl; // Ensure the page loads
+        }
         </script>
 
         <script data-goatcounter="https://andrearossetti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
