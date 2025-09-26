@@ -74,8 +74,9 @@
 
         // Handle back button to reload or reset content
         window.addEventListener('popstate', () => {
+            console.log('popstate triggered, pathname:', window.location.pathname);
             if (window.location.pathname === '/pages/projects.html') {
-                // Reload the page to restore original content
+                console.log('Reloading /pages/projects.html');
                 window.location.reload();
             }
         });
