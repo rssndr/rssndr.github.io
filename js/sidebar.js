@@ -4,18 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const baseURL = '/';
 
-    // Define menu items as arrays for easier expansion
+    // Main menu with clean hrefs
     const mainMenu = [
-        { page: 'index.html', icon: 'fas fa-home', text: 'Home', href: `${baseURL}index.html` },
-        //{ page: 'writing.html', icon: 'fas fa-pencil-alt', text: 'Writing', href: `${baseURL}pages/writing.html` },
-        { page: 'about.html', icon: 'fas fa-user-tie', text: 'About', href: `${baseURL}pages/about.html` },
-        { page: 'bookmarks.html', icon: 'fas fa-bookmark', text: 'Bookmarks', href: `${baseURL}pages/bookmarks.html` },
+        { page: 'index.html', icon: 'fas fa-home', text: 'Home', href: '/' },
+        { page: 'about.html', icon: 'fas fa-user-tie', text: 'About', href: '/about' },
+        { page: 'bookmarks.html', icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/bookmarks' },
+        { page: 'writing.html', icon: 'fas fa-pencil-alt', text: 'Writing', href: '/writing' }, // Add writing
     ];
 
+    // Projects menu with clean hrefs and IDs
     const projectsMenu = [
-        { page: 'micrograd-c', icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c', href: `${baseURL}projects/project.html?id=micrograd-c` },
-        { page: 'tcp-server', icon: 'fa-solid fa-network-wired', text: 'TCP Server', href: `${baseURL}projects/project.html?id=tcp-server` },
-        { page: 'vps', icon: 'fa-solid fa-server', text: 'VPS Hosting Setup', href: `${baseURL}projects/project.html?id=vps` },
+        { page: 'project.html', icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c', href: '/projects/micrograd-c' },
+        { page: 'project.html', icon: 'fa-solid fa-network-wired', text: 'TCP Server', href: '/projects/tcp-server' },
+        { page: 'project.html', icon: 'fa-solid fa-server', text: 'VPS Hosting Setup', href: '/projects/vps' },
     ];
 
     const onlineMenu = [
@@ -25,11 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { icon: 'fa-solid fa-envelope', text: 'Email', href: 'mailto:rossettiandrea@proton.me', target: '_blank' },
     ];
 
-    // Generate HTML from arrays
     const generateMenuHTML = (items, className = 'menu', isLink = false) => {
         return `<ul class="${className}${isLink ? ' link' : ''}">
             ${items.map(item => `
-                <li data-page="${item.page || ''}">
+                <li data-page="${item.page || ''}" data-href="${item.href || ''}">
                     <a href="${item.href}"${item.target ? ` target="${item.target}"` : ''}>
                         <i class="${item.icon}"></i> ${item.text}
                     </a>
@@ -56,17 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
         ${generateMenuHTML(onlineMenu, 'sub-menu', true)}
     `;
 
-    // Insert the main sidebar
     sidebarPlaceholder.innerHTML = sidebarHTML;
 
-    // Get current page
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    // Enhanced currentPage detection
+    let currentPath = window.location.pathname;
+    let currentPage = currentPath.split('/').pop() || 'index.html';
+    if (currentPage === '') currentPage = 'index.html';
+    if (!currentPage.endsWith('.html') && currentPage !== 'index.html') {
+        currentPage += '.html';
+    }
 
-    // Set active class for main sidebar
-    const menuItems = sidebarPlaceholder.querySelectorAll('li[data-page]');
+    // Set active class based on href match
+    const menuItems = sidebarPlaceholder.querySelectorAll('li[data-href]');
     menuItems.forEach(item => {
-        const page = item.getAttribute('data-page');
-        if (page === currentPage) {
+        const href = item.getAttribute('data-href');
+        if (href && (href === currentPath || (currentPath.startsWith(href) && href !== '/'))) {
             item.classList.add('active');
         }
     });
