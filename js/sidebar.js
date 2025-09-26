@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainMenu = [
         { page: 'index.html', icon: 'fas fa-home', text: 'Home', href: '/' },
         { page: 'about.html', icon: 'fas fa-user-tie', text: 'About', href: '/about' },
+        /*{ page: 'writing.html', icon: 'fas fa-pencil-alt', text: 'Writing', href: '/writing' },*/
         { page: 'bookmarks.html', icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/bookmarks' },
-        { page: 'writing.html', icon: 'fas fa-pencil-alt', text: 'Writing', href: '/writing' }, // Add writing
     ];
 
     // Projects menu with clean hrefs and IDs
