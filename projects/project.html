@@ -1,14 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Loading... - Andrea Rossetti</title> <!-- Default; JS overrides -->
+        <title>Loading... - Andrea Rossetti</title>
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <!-- Load MathJax 3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.1/purify.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     </head>
     <body>
         <nav id="sidebar-placeholder" class="sidebar"></nav>
@@ -19,35 +21,27 @@
                     <!-- Markdown rendered here -->
                 </div>
             </div>
-
             <footer class="site-footer">
                 <p>Built with HTML, CSS & JS</p>
                 <p>© 2025 Andrea Rossetti</p>
             </footer>
         </main>
-
         <button id="back-to-top">↑</button>
-
         <script src="../js/sidebar.js"></script>
         <script src="../js/theme-toggle.js"></script>
         <script src="../js/back-to-top.js"></script>
-
         <script>
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true,
-                skipTags: ['pre', 'code']
-            }
+        // Configure marked.js to allow LaTeX delimiters
+        marked.setOptions({
+            breaks: true,
+            gfm: true,
         });
-        </script>
 
+        // MathJax 3: No need for manual config, it auto-detects $...$, $$...$$, \(...\), etc.
+        </script>
         <script>
         let id = new URLSearchParams(window.location.search).get('id');
         if (!id) {
-            // Extract id from path if no query string
             const pathParts = window.location.pathname.split('/');
             if (pathParts.length > 2 && pathParts[1] === 'projects') {
                 id = pathParts[2];
@@ -59,14 +53,16 @@
                 .then(md => {
                     const titleMatch = md.match(/^# (.*)/);
                     const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
+                    // Parse Markdown, then sanitize with DOMPurify
                     const html = DOMPurify.sanitize(marked.parse(md), {
-                        ALLOWED_TAGS: ['#text', 'p', 'em', 'strong', 'ul', 'ol', 'li', 'span', 'div', 'math'],
+                        ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'em', 'strong', 'ul', 'ol', 'li', 'span', 'div', 'br', 'code', 'pre'],
+                        ALLOWED_ATTR: [],
                     });
                     document.getElementById('post-content').innerHTML = html;
-                    if (typeof MathJax !== 'undefined' && MathJax.Hub) {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('post-content')]);
+                    // MathJax 3: Typeset after content is rendered
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise();
                     }
-
                     if (window.goatcounter) {
                         window.goatcounter.count({
                             path: `/projects/${id}`,
