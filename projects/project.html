@@ -62,8 +62,9 @@
                     const html = DOMPurify.sanitize(marked.parse(md));
                     document.getElementById('post-content').innerHTML = html;
 
-                    if (typeof MathJax !== 'undefined' && MathJax.typeset) {
-                        MathJax.typeset([document.getElementById('post-content')]);
+                    if (typeof MathJax !== 'undefined' && MathJax.Hub) {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('post-content')]);
+                    }
 
                     if (window.goatcounter) {
                         window.goatcounter.count({
