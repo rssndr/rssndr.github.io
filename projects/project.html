@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +6,14 @@
         <title>Loading... - Andrea Rossetti</title>
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <!-- Configure MathJax to use $ as delimiters -->
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']]
+                }
+            };
+        </script>
         <!-- Load MathJax 3 -->
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -31,50 +38,56 @@
         <script src="../js/theme-toggle.js"></script>
         <script src="../js/back-to-top.js"></script>
         <script>
-        // Configure marked.js to allow LaTeX delimiters
-        marked.setOptions({
-            breaks: true,
-            gfm: true,
-        });
-
-        // MathJax 3: No need for manual config, it auto-detects $...$, $$...$$, \(...\), etc.
+            // Configure marked.js
+            marked.setOptions({
+                breaks: true,
+                gfm: true,
+            });
         </script>
         <script>
-        let id = new URLSearchParams(window.location.search).get('id');
-        if (!id) {
-            const pathParts = window.location.pathname.split('/');
-            if (pathParts.length > 2 && pathParts[1] === 'projects') {
-                id = pathParts[2];
+            let id = new URLSearchParams(window.location.search).get('id');
+            if (!id) {
+                // Extract id from path if no query string
+                const pathParts = window.location.pathname.split('/');
+                if (pathParts.length > 2 && pathParts[1] === 'projects') {
+                    id = pathParts[2];
+                }
             }
-        }
-        if (id) {
-            fetch(`/projects/${id}.md`)
-                .then(response => response.text())
-                .then(md => {
-                    const titleMatch = md.match(/^# (.*)/);
-                    const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
-                    // Parse Markdown, then sanitize with DOMPurify
-                    const html = DOMPurify.sanitize(marked.parse(md), {
-                        ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'em', 'strong', 'ul', 'ol', 'li', 'span', 'div', 'br', 'code', 'pre'],
-                        ALLOWED_ATTR: [],
-                    });
-                    document.getElementById('post-content').innerHTML = html;
-                    // MathJax 3: Typeset after content is rendered
-                    if (typeof MathJax !== 'undefined') {
-                        MathJax.typesetPromise();
-                    }
-                    if (window.goatcounter) {
-                        window.goatcounter.count({
-                            path: `/projects/${id}`,
-                            title: title,
-                            event: true
+            if (id) {
+                fetch(`/projects/${id}.md`)
+                    .then(response => response.text())
+                    .then(md => {
+                        const titleMatch = md.match(/^# (.*)/);
+                        const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
+                        // Parse Markdown, then sanitize with DOMPurify
+                        const html = DOMPurify.sanitize(marked.parse(md), {
+                            ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'em', 'strong', 'ul', 'ol', 'li', 'span', 'div', 'br', 'code', 'pre'],
+                            ALLOWED_ATTR: [],
                         });
-                    }
-                })
-                .catch(error => console.error('Error loading Markdown:', error));
-        } else {
-            document.getElementById('post-content').innerHTML = '<p>Error: No post ID provided.</p>';
-        }
+                        document.getElementById('post-content').innerHTML = html;
+
+                        // Wait for MathJax to load, then typeset
+                        function typesetMath() {
+                            if (typeof MathJax !== 'undefined') {
+                                MathJax.typesetPromise();
+                            } else {
+                                setTimeout(typesetMath, 500);
+                            }
+                        }
+                        typesetMath();
+
+                        if (window.goatcounter) {
+                            window.goatcounter.count({
+                                path: `/projects/${id}`,
+                                title: title,
+                                event: true
+                            });
+                        }
+                    })
+                    .catch(error => console.error('Error loading Markdown:', error));
+            } else {
+                document.getElementById('post-content').innerHTML = '<p>Error: No post ID provided.</p>';
+            }
         </script>
     </body>
 </html>
