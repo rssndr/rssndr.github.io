@@ -33,7 +33,7 @@ Neurons compute weighted sums plus bias, with optional ReLU. Layers form multi-l
 
 ## Project Structure
 
-Micrograd.c is a lightweight library with no external dependencies beyond standard C libraries and `<math.h>`. Files:
+micrograd.c is a lightweight library with no external dependencies beyond standard C libraries and `<math.h>`. Files:
 
 - **engine.h / engine.c**: Autograd core (Value struct, operations, backprop).
 - **nn.h / nn.c**: Neural network (neurons, layers, MLPs).
