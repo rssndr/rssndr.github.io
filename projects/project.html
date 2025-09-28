@@ -49,15 +49,9 @@
         </script>
 
         <script>
-            const renderer = new marked.Renderer();
-            renderer.link = function(href, title, text) {
-                return `<a target="_blank" rel="noopener noreferrer" href="${href}"${title ? ` title="${title}"` : ''}>${text}</a>`;
-            };
-
             marked.setOptions({
                 breaks: true,
                 gfm: true,
-                renderer: renderer,
             });
 
             let id = new URLSearchParams(window.location.search).get('id');
@@ -82,7 +76,14 @@
                             ALLOWED_ATTR: ['href', 'target', 'rel'],
                         });
 
-                        document.getElementById('post-content').innerHTML = html;
+                        const postContent = document.getElementById('post-content');
+                        postContent.innerHTML = html;
+
+                        const links = postContent.getElementsByTagName('a');
+                        for (let link of links) {
+                            link.setAttribute('target', '_blank');
+                            link.setAttribute('rel', 'noopener noreferrer');
+                        }
 
                         // Wait for MathJax to load, then typeset
                         function typesetMath() {
