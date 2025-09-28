@@ -40,7 +40,9 @@
                 processEscapes: true,
                 processEnvironments: true,
                 tags: 'ams',
-                skipTags: ['pre', 'code']
+            },
+            chtml: {
+                ignoreHtmlClass: '  ' // Skip code blocks
             }
         };
         </script>
