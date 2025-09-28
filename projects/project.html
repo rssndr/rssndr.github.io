@@ -59,9 +59,10 @@
                 .then(md => {
                     const titleMatch = md.match(/^# (.*)/);
                     const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
-                    const html = DOMPurify.sanitize(marked.parse(md));
+                    const html = DOMPurify.sanitize(marked.parse(md), {
+                        ALLOWED_TAGS: ['#text', 'p', 'em', 'strong', 'ul', 'ol', 'li', 'span', 'div', 'math'],
+                    });
                     document.getElementById('post-content').innerHTML = html;
-
                     if (typeof MathJax !== 'undefined' && MathJax.Hub) {
                         MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('post-content')]);
                     }
