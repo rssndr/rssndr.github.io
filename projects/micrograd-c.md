@@ -217,5 +217,5 @@ C's low-level nature posed challenges:
 
 ## Conclusion
 
-Micrograd.c is a lightweight C library that implements automatic differentiation and neural network training, replicating the core functionality of Karpathy’s micrograd. It provides a clear view of backpropagation and neural network mechanics through explicit graph construction and the Adam optimizer. The project includes tests to verify operations and training on a toy dataset. Check the code and run tests at [micrograd.c on GitHub](https://github.com/rssndr/micrograd.c). Suggestions or issues are welcome via GitHub.
+Micrograd.c is a lightweight C library that implements automatic differentiation and neural network training, replicating the core functionality of Karpathy’s micrograd. It provides a clear view of backpropagation and neural network mechanics through explicit graph construction and the Adam optimizer. The project includes tests to verify operations and training on a toy dataset. Check the code and run tests at micrograd.c on [GitHub](https://github.com/rssndr/micrograd.c). Suggestions or issues are welcome via GitHub.
 

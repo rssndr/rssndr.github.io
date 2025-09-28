@@ -28,23 +28,38 @@
                     <!-- Markdown rendered here -->
                 </div>
             </div>
+
             <footer class="site-footer">
                 <p>Built with HTML, CSS & JS</p>
                 <p>© 2025 Andrea Rossetti</p>
             </footer>
         </main>
+
         <button id="back-to-top">↑</button>
+
         <script src="../js/sidebar.js"></script>
         <script src="../js/theme-toggle.js"></script>
         <script src="../js/back-to-top.js"></script>
+
         <script>
-            // Configure marked.js
             marked.setOptions({
                 breaks: true,
                 gfm: true,
             });
         </script>
+
         <script>
+            const renderer = new marked.Renderer();
+            renderer.link = function(href, title, text) {
+                return `<a target="_blank" rel="noopener noreferrer" href="${href}"${title ? ` title="${title}"` : ''}>${text}</a>`;
+            };
+
+            marked.setOptions({
+                breaks: true,
+                gfm: true,
+                renderer: renderer,
+            });
+
             let id = new URLSearchParams(window.location.search).get('id');
             if (!id) {
                 // Extract id from path if no query string
