@@ -59,11 +59,14 @@
                     .then(md => {
                         const titleMatch = md.match(/^# (.*)/);
                         const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
-                        // Parse Markdown, then sanitize with DOMPurify
                         const html = DOMPurify.sanitize(marked.parse(md), {
-                            ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'em', 'strong', 'ul', 'ol', 'li', 'span', 'div', 'br', 'code', 'pre'],
-                            ALLOWED_ATTR: [],
+                            ALLOWED_TAGS: [
+                                'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'em', 'strong',
+                                'ul', 'ol', 'li', 'span', 'div', 'br', 'code', 'pre', 'a'
+                            ],
+                            ALLOWED_ATTR: ['href', 'target', 'rel'],
                         });
+
                         document.getElementById('post-content').innerHTML = html;
 
                         // Wait for MathJax to load, then typeset
