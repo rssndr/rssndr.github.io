@@ -57,6 +57,10 @@
                     const title = titleMatch ? titleMatch[1].trim() : 'Untitled';
                     document.title = `${title} - Andrea Rossetti`;
                     document.getElementById('post-content').innerHTML = marked.parse(md);
+
+                    if (typeof MathJax !== 'undefined' && MathJax.typeset) {
+                        MathJax.typeset([document.getElementById('post-content')]);
+
                     if (window.goatcounter) {
                         window.goatcounter.count({
                             path: `/projects/${id}`,
