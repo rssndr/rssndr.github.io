@@ -24,10 +24,11 @@ Key concepts:
 
 Supported operations:
 
-- **Addition**: \( c = a + b \), gradients: \( \frac{\partial c}{\partial a} = 1 \), \( \frac{\partial c}{\partial b} = 1 \).
-- **Multiplication**: \( c = a \times b \), gradients: \( \frac{\partial c}{\partial a} = b \), \( \frac{\partial c}{\partial b} = a \).
-- **Power**: \( c = a^b \), gradient: \( \frac{\partial c}{\partial a} = b \cdot a^{b-1} \).
-- **Leaky ReLU**: \( c = \max(0, a) \) or \( 0.01 \cdot a \) if negative, gradient: 1 if \( a > 0 \), else 0.01.
+- **Addition**: $c = a + b$, gradients: $\frac{\partial c}{\partial a} = 1$, $\frac{\partial c}{\partial b} = 1$.
+- **Multiplication**: $c = a \times b$, gradients: $\frac{\partial c}{\partial a} = b$, $\frac{\partial c}{\partial b} = a$.
+- **Power**: $c = a^b$, gradient: $\frac{\partial c}{\partial a} = b \cdot a^{b-1}$.
+- **Leaky ReLU**: $c = \max(0, a)$ or $0.01 \cdot a$ if negative, gradient: 1 if $a > 0$, else 0.01.
+
 
 Neurons compute weighted sums plus bias, with optional ReLU. Layers form multi-layer perceptrons (MLPs). Loss (e.g., mean squared error) is minimized via optimizers like Adam.
 
