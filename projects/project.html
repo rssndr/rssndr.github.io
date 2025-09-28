@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/es5/tex-mml-chtml.min.js" async></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.1/purify.min.js"></script>
     </head>
     <body>
@@ -33,18 +33,15 @@
         <script src="../js/back-to-top.js"></script>
 
         <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']],
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['\$$   ', '\   $$']],
+                displayMath: [['\$$   ', '\   $$']],
                 processEscapes: true,
                 processEnvironments: true,
-                tags: 'ams',
-            },
-            chtml: {
-                ignoreHtmlClass: '  ' // Skip code blocks
+                skipTags: ['pre', 'code']
             }
-        };
+        });
         </script>
 
         <script>
