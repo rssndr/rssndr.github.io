@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isMobile) {
         sidebarHTML += `
             <div class="sidebar-header">
-                <h1>Andrea Rossetti</h1>
+                <h1><a class="home-link" href="https://andrearossetti.me">Andrea Rossetti</a></h1>
             </div>
         `;
     }
