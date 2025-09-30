@@ -775,6 +775,23 @@ html {
         flex-direction: column;
     }
 
+    .theme-toggle {
+        right: 16px;
+    }
+
+    .info-location {
+        white-space: nowrap;
+    }
+
+    .socials-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .social-link i {
+        margin-right: 4px;
+    }
+
     .intro-image {
         width: 200px;
         aspect-ratio: 1/1;
@@ -853,11 +870,6 @@ html {
     .grid-layout {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-
-    .socials-container {
-        flex-wrap: wrap;
-        gap: 16px;
     }
 }
 
