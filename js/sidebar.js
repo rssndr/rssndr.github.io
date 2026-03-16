@@ -2,27 +2,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarPlaceholder = document.getElementById('sidebar-placeholder');
     if (!sidebarPlaceholder) return;
 
-    // Main menu — using explicit .html files
+    // Main menu
     const mainMenu = [
-        { icon: 'fas fa-home',     text: 'Home',      href: 'index.html' },
-        { icon: 'fas fa-user-tie', text: 'About',     href: 'about.html' },
-        /* { icon: 'fas fa-pencil-alt', text: 'Writing', href: 'writing.html' }, */
-        { icon: 'fas fa-bookmark', text: 'Bookmarks', href: 'bookmarks.html' },
+        { icon: 'fas fa-home',     text: 'Home',      href: '/index.html' },
+        { icon: 'fas fa-user-tie', text: 'About',     href: '/pages/about.html' },
+        /* { icon: 'fas fa-pencil-alt', text: 'Writing', href: '/pages/writing.html' }, */
+        { icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/pages/bookmarks.html' },
     ];
-
-    // Projects menu — linking to project.html with query string or just separate files
-    // (using separate .html files here — adjust if you prefer one project.html + parameters)
+/***
+    // Projects menu – assuming you now have .html files here
     const projectsMenu = [
-        { icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c',      href: 'micrograd-c.html' },
-        { icon: 'fa-solid fa-network-wired', text: 'TCP Server',       href: 'tcp-server.html' },
-        { icon: 'fa-solid fa-server',        text: 'VPS Hosting Setup', href: 'vps.html' },
+        { icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c',      href: '/projects/micrograd-c.html' },
+        { icon: 'fa-solid fa-network-wired', text: 'TCP Server',       href: '/projects/tcp-server.html' },
+        { icon: 'fa-solid fa-server',        text: 'VPS Hosting Setup', href: '/projects/vps.html' },
+        // or if still using one file + fragment / query → e.g. '/projects/project.html#micrograd-c'
     ];
-
-    // Online / social links (unchanged — external)
+***/
+    // Online / social links
     const onlineMenu = [
         { icon: 'fa-brands fa-x-twitter', text: 'X',       href: 'https://x.com/rssndr',        target: '_blank' },
         { icon: 'fa-brands fa-linkedin',  text: 'LinkedIn', href: 'https://www.linkedin.com/in/andrea-rossetti-092161384/', target: '_blank' },
-        { icon: 'fab fa-github',          text: 'GitHub',  href: 'https://github.com/rssndr',   target: '_blank' },
         { icon: 'fa-solid fa-envelope',   text: 'Email',   href: 'mailto:rossettiandrea@proton.me', target: '_blank' },
     ];
 
@@ -51,8 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sidebarHTML += `
         ${generateMenuHTML(mainMenu)}
-        <div class="section-title">Projects</div>
-        ${generateMenuHTML(projectsMenu, 'sub-menu')}
         <div class="section-title">Online</div>
         ${generateMenuHTML(onlineMenu, 'sub-menu', true)}
     `;
