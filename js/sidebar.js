@@ -2,22 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarPlaceholder = document.getElementById('sidebar-placeholder');
     if (!sidebarPlaceholder) return;
 
-    // Main menu
+    // Main menu — using explicit .html files
     const mainMenu = [
-        { icon: 'fas fa-home',     text: 'Home',      href: '/' },
-        { icon: 'fas fa-user-tie', text: 'About',     href: '/about' },
-        /* { icon: 'fas fa-pencil-alt', text: 'Writing', href: '/writing' }, */
-        { icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/bookmarks' },
+        { icon: 'fas fa-home',     text: 'Home',      href: 'index.html' },
+        { icon: 'fas fa-user-tie', text: 'About',     href: 'about.html' },
+        /* { icon: 'fas fa-pencil-alt', text: 'Writing', href: 'writing.html' }, */
+        { icon: 'fas fa-bookmark', text: 'Bookmarks', href: 'bookmarks.html' },
     ];
 
-    // Projects menu
+    // Projects menu — linking to project.html with query string or just separate files
+    // (using separate .html files here — adjust if you prefer one project.html + parameters)
     const projectsMenu = [
-        { icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c',      href: '/projects/micrograd-c' },
-        { icon: 'fa-solid fa-network-wired', text: 'TCP Server',       href: '/projects/tcp-server' },
-        { icon: 'fa-solid fa-server',        text: 'VPS Hosting Setup', href: '/projects/vps' },
+        { icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c',      href: 'micrograd-c.html' },
+        { icon: 'fa-solid fa-network-wired', text: 'TCP Server',       href: 'tcp-server.html' },
+        { icon: 'fa-solid fa-server',        text: 'VPS Hosting Setup', href: 'vps.html' },
     ];
 
-    // Online / social links
+    // Online / social links (unchanged — external)
     const onlineMenu = [
         { icon: 'fa-brands fa-x-twitter', text: 'X',       href: 'https://x.com/rssndr',        target: '_blank' },
         { icon: 'fa-brands fa-linkedin',  text: 'LinkedIn', href: 'https://www.linkedin.com/in/andrea-rossetti-092161384/', target: '_blank' },
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isMobile) {
         sidebarHTML += `
             <div class="sidebar-header">
-                <h1><a class="home-link" href="/">Andrea Rossetti</a></h1>
+                <h1><a class="home-link" href="index.html">Andrea Rossetti</a></h1>
             </div>
         `;
     }
@@ -58,18 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sidebarPlaceholder.innerHTML = sidebarHTML;
 
-    // Highlight current page — exact match on pathname
-    const currentPath = window.location.pathname;
-    const menuItems = sidebarPlaceholder.querySelectorAll('li a');
+    // Very simple active state — matches current filename
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    const menuLinks = sidebarPlaceholder.querySelectorAll('li a');
 
-    menuItems.forEach(link => {
+    menuLinks.forEach(link => {
         const href = link.getAttribute('href');
+
         // Skip external links
         if (href.startsWith('http') || href.startsWith('mailto:')) return;
 
-        // GitHub Pages usually serves index.html as "/", so we normalize
-        if ((href === currentPath) ||
-            (href === '/' && (currentPath === '' || currentPath === '/'))) {
+        if (href === currentFile) {
             link.parentElement.classList.add('active');
         }
     });
