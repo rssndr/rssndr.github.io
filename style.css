@@ -530,18 +530,7 @@ html {
     margin-bottom: auto;
 }
 
-.flipper {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s ease;
-    transform-style: preserve-3d;
-}
-
-.intro-image:hover .flipper {
-    transform: rotateY(180deg);
-}
-
-.front, .back {
+.profile-image {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -798,14 +787,6 @@ html {
         margin-bottom: 32px;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .intro-image:active .flipper {
-        transform: rotateY(180deg);
-    }
-
-    .intro-image .flipper {
-        transform: rotateY(0deg);
     }
 
     main {
