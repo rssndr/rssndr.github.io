@@ -6,18 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainMenu = [
         { icon: 'fas fa-home',     text: 'Home',      href: '/index.html' },
         { icon: 'fas fa-user-tie', text: 'About',     href: '/pages/about.html' },
-        /* { icon: 'fas fa-pencil-alt', text: 'Writing', href: '/pages/writing.html' }, */
         { icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/pages/bookmarks.html' },
     ];
-/***
+
+    // Projects menu (kept as you had it)
+    /***
     // Projects menu – assuming you now have .html files here
     const projectsMenu = [
         { icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c',      href: '/projects/micrograd-c.html' },
         { icon: 'fa-solid fa-network-wired', text: 'TCP Server',       href: '/projects/tcp-server.html' },
         { icon: 'fa-solid fa-server',        text: 'VPS Hosting Setup', href: '/projects/vps.html' },
-        // or if still using one file + fragment / query → e.g. '/projects/project.html#micrograd-c'
     ];
-***/
+    ***/
+
+    const writingMenu = [
+        { icon: 'fa-solid fa-earth-europe', text: 'Reclaiming Europe\'s Future', href: '/posts/reclaiming-europe.html' },
+    ];
+
     // Online / social links
     const onlineMenu = [
         { icon: 'fa-brands fa-x-twitter', text: 'X',       href: 'https://x.com/rssndr',        target: '_blank' },
@@ -48,8 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
+    // Build sidebar
     sidebarHTML += `
         ${generateMenuHTML(mainMenu)}
+
+        <div class="section-title">Writing</div>
+        ${generateMenuHTML(writingMenu)}
+
         <div class="section-title">Online</div>
         ${generateMenuHTML(onlineMenu, 'sub-menu', true)}
     `;
@@ -66,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Skip external links
         if (href.startsWith('http') || href.startsWith('mailto:')) return;
 
-        if (href === currentFile) {
+        if (href === currentFile || href.includes(`?id=${currentFile.replace('.html','')}`)) {
             link.parentElement.classList.add('active');
         }
     });
 
     // ────────────────────────────────────────────────
-    // Mobile header + toggle logic (unchanged)
+    // Mobile header + toggle logic
     // ────────────────────────────────────────────────
     if (isMobile) {
         const mobileHeaderHTML = `
