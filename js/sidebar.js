@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Main menu
     const mainMenu = [
         { icon: 'fas fa-home',     text: 'Home',      href: '/index.html' },
-        { icon: 'fa-solid fa-pen', text: 'Writings',  href: '/pages/writing.html' },
+        { icon: 'fa-solid fa-pen', text: 'Essays',  href: '/pages/writing.html' },
         { icon: 'fas fa-user-tie', text: 'About',     href: '/pages/about.html' },
         { icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/pages/bookmarks.html' },
     ];
@@ -19,10 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { icon: 'fa-solid fa-server',        text: 'VPS Hosting Setup', href: '/projects/vps.html' },
     ];
     ***/
-
-    const writingMenu = [
-        { icon: 'fa-solid fa-earth-europe', text: 'The Real Enemy of Europe', href: '/posts/20260418-the-real-enemy-of-europe.html' },
-    ];
 
     // Online / social links
     const onlineMenu = [
@@ -57,9 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Build sidebar
     sidebarHTML += `
         ${generateMenuHTML(mainMenu)}
-
-        <div class="section-title">Writing</div>
-        ${generateMenuHTML(writingMenu)}
 
         <div class="section-title">Online</div>
         ${generateMenuHTML(onlineMenu, 'sub-menu', true)}

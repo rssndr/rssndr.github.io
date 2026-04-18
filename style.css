@@ -41,7 +41,7 @@ main h2 {
 }
 
 main p, main ul {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--secondary-text);
 }
 
@@ -287,7 +287,7 @@ html {
 }
 
 .bio-text p {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--secondary-text);
     line-height: 1.6;
     margin-bottom: 16px;
@@ -553,7 +553,7 @@ html {
 /* Markdown post content */
 #post-content {
     line-height: 1.6;
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-color);
 }
 
@@ -815,19 +815,19 @@ html {
     }
 
     .item-list a {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 16px;
+        padding: 12px 16px;
     }
 
     .item-title {
-        margin-right: 0;
-        margin-bottom: 4px;
+        font-size: 15px;
     }
 
     .item-subtitle {
-        margin-bottom: 8px;
-        margin-right: 32px;
+        font-size: 13px;
+    }
+
+    .item-text {
+        max-width: 85%;
     }
 
     .item-arrow {

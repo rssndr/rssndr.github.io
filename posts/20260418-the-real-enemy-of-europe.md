@@ -1,4 +1,4 @@
-# The Real Enemy of Europe
+# The Real Enemy of Europe Isn't America or Russia
 
 ## Why performative anti-Trumpism and anti-Putinism won’t save our continent
 
