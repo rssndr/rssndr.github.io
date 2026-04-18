@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ***/
 
     const writingMenu = [
-        { icon: 'fa-solid fa-earth-europe', text: 'Reclaiming Europe\'s Future', href: '/posts/reclaiming-europe.html' },
+        { icon: 'fa-solid fa-earth-europe', text: 'The Real Enemy of Europe', href: '/posts/20260418-the-real-enemy-of-europe.html' },
     ];
 
     // Online / social links

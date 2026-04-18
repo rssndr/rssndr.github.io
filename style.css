@@ -320,29 +320,32 @@ html {
 .item-list a {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     text-decoration: none;
     color: inherit;
-    transition: color 0.2s;
     padding: 0 20px;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .item-title {
     font-size: 16px;
     font-weight: 600;
-    margin-right: 16px;
 }
 
 .item-subtitle {
     font-size: 14px;
     color: var(--secondary-text);
-    flex-grow: 1;
+    margin-top: 4px;
 }
 
 .item-arrow {
-    font-size: 14px;
-    color: var(--text-color);
     margin-left: auto;
+    font-size: 14px;
 }
 
 .item-list li:hover .item-arrow {
