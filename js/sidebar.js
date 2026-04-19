@@ -2,25 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarPlaceholder = document.getElementById('sidebar-placeholder');
     if (!sidebarPlaceholder) return;
 
-    // Main menu
+    // Menus
     const mainMenu = [
         { icon: 'fas fa-home',     text: 'Home',      href: '/index.html' },
         { icon: 'fas fa-user-tie', text: 'About',     href: '/pages/about.html' },
-        { icon: 'fa-solid fa-pen', text: 'Essays',  href: '/pages/writing.html' },
+        { icon: 'fa-solid fa-pen', text: 'Essays',    href: '/pages/writing.html' },
         { icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/pages/bookmarks.html' },
     ];
-
-    // Projects menu (kept as you had it)
-    /***
-    // Projects menu – assuming you now have .html files here
+/**
     const projectsMenu = [
         { icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c',      href: '/projects/micrograd-c.html' },
         { icon: 'fa-solid fa-network-wired', text: 'TCP Server',       href: '/projects/tcp-server.html' },
         { icon: 'fa-solid fa-server',        text: 'VPS Hosting Setup', href: '/projects/vps.html' },
     ];
-    ***/
-
-    // Online / social links
+**/
     const onlineMenu = [
         { icon: 'fa-brands fa-x-twitter', text: 'X',       href: 'https://x.com/rssndr',        target: '_blank' },
         { icon: 'fa-brands fa-linkedin',  text: 'LinkedIn', href: 'https://www.linkedin.com/in/andrea-rossetti-092161384/', target: '_blank' },
@@ -45,39 +40,48 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isMobile) {
         sidebarHTML += `
             <div class="sidebar-header">
-                <h1><a class="home-link" href="index.html">Andrea Rossetti</a></h1>
+                <h1><a class="home-link" href="/index.html">Andrea Rossetti</a></h1>
             </div>
         `;
     }
 
-    // Build sidebar
+    // Main content wrapper
+    /**
+    To add projects, add this after mainMenu:
+            <div class="section-title">Projects</div>
+            ${generateMenuHTML(projectsMenu, 'sub-menu')}
+    **/
     sidebarHTML += `
-        ${generateMenuHTML(mainMenu)}
+        <div class="sidebar-content">
+            ${generateMenuHTML(mainMenu)}
 
-        <div class="section-title">Online</div>
-        ${generateMenuHTML(onlineMenu, 'sub-menu', true)}
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="section-title">Online</div>
+            ${generateMenuHTML(onlineMenu, 'sub-menu', true)}
+        </div>
     `;
 
     sidebarPlaceholder.innerHTML = sidebarHTML;
 
-    // Very simple active state — matches current filename
-    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-    const menuLinks = sidebarPlaceholder.querySelectorAll('li a');
+    // Active menu highlighting
+    const currentPath = window.location.pathname.toLowerCase();
+    const menuLinks = document.querySelectorAll('.menu li a, .sub-menu li a');
 
     menuLinks.forEach(link => {
-        const href = link.getAttribute('href');
+        let href = link.getAttribute('href').toLowerCase();
 
-        // Skip external links
-        if (href.startsWith('http') || href.startsWith('mailto:')) return;
-
-        if (href === currentFile || href.includes(`?id=${currentFile.replace('.html','')}`)) {
+        if ((currentPath === '/' || currentPath.endsWith('/index.html')) &&
+            (href === '/index.html' || href === 'index.html' || href === '/')) {
+            link.parentElement.classList.add('active');
+        }
+        else if (currentPath.endsWith(href) || currentPath === href) {
             link.parentElement.classList.add('active');
         }
     });
 
-    // ────────────────────────────────────────────────
     // Mobile header + toggle logic
-    // ────────────────────────────────────────────────
     if (isMobile) {
         const mobileHeaderHTML = `
             <header class="mobile-header">
@@ -119,16 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Start closed
             sidebar.classList.remove('open');
             sidebar.setAttribute('aria-hidden', 'true');
-        }
-
-        if (themeToggle) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > headerHeight) {
-                    themeToggle.classList.add('sticky');
-                } else {
-                    themeToggle.classList.remove('sticky');
-                }
-            });
         }
     }
 });

@@ -62,6 +62,7 @@ main img {
 }
 
 .site-footer p {
+    font-size: 15px;
     margin: 2px 0;
 }
 
@@ -123,17 +124,30 @@ html {
     color: var(--text-color);
     padding: 20px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar-header {
     margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 .sidebar-header h1 {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
     font-weight: 600;
+    flex-shrink: 0;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
 }
 
 .home-link {
@@ -163,9 +177,10 @@ html {
 
 .menu a:hover, .sub-menu a:hover {
     background: var(--sidebar-hover);
+    color: var(--accent-color);
 }
 
-.menu li.active a {
+.menu li.active a, .sub-menu li.active a{
     background: var(--sidebar-active-bg);
     color: var(--sidebar-active-text);
 }
@@ -185,15 +200,15 @@ html {
 }
 
 .section-title {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 600;
     color: var(--text-color);
-    margin: 24px 0 8px 0;
-    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 8px;
 }
 
-.sub-menu li.active a {
-    background: var(--sidebar-active-bg);
-    color: var(--sidebar-active-text);
+.sub-menu.link {
+    flex-shrink: 0;
 }
 
 .sub-item {
@@ -333,12 +348,12 @@ html {
 }
 
 .item-title {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
 }
 
 .item-subtitle {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--secondary-text);
     margin-top: 4px;
 }
@@ -386,14 +401,14 @@ html {
 }
 
 .timeline-date {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--secondary-text);
     display: block;
     margin-bottom: 12px;
 }
 
 .timeline-content p {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--secondary-text);
     line-height: 1.5;
     margin: 0;
@@ -472,11 +487,11 @@ html {
 }
 
 .job-title {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .info-location {
-    font-size: 14px;
+    font-size: 15px;
     margin: auto 8px !important;
 }
 
@@ -494,7 +509,7 @@ html {
 
 .introduction p {
     color: var(--text-color);
-    font-size: 15px;
+    font-size: 16px;
     margin: 0px auto;
 }
 
@@ -506,7 +521,7 @@ html {
 .social-link {
     color: var(--secondary-text) !important;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     transition: color 0.2s, text-decoration 0.2s;
@@ -803,10 +818,6 @@ html {
         flex-grow: 1;
         box-sizing: border-box;
         overflow-x: hidden;
-    }
-
-    .main-content {
-        gap: 32px;
     }
 
     .item-list li {
