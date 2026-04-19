@@ -488,6 +488,7 @@ html {
 
 .job-title {
     font-size: 15px;
+    margin-bottom: 20px !important;
 }
 
 .info-location {
@@ -525,7 +526,6 @@ html {
     display: flex;
     align-items: center;
     transition: color 0.2s, text-decoration 0.2s;
-    margin-top: 16px;
 }
 
 .social-link i {
@@ -539,10 +539,9 @@ html {
 
 .intro-image {
     position: relative;
-    width: 240px;
+    width: 200px;
     aspect-ratio: 1/1;
     flex-shrink: 0;
-    perspective: 1000px;
     border-radius: 50%;
     margin-top: auto;
     margin-bottom: auto;
