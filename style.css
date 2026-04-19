@@ -32,7 +32,7 @@ main {
 main h1 {
     font-size: 24px;
     font-weight: 600;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 main h2 {
@@ -473,7 +473,7 @@ html {
 }
 
 .intro-content p:last-child {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .info {
@@ -525,7 +525,7 @@ html {
     display: flex;
     align-items: center;
     transition: color 0.2s, text-decoration 0.2s;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 .social-link i {
