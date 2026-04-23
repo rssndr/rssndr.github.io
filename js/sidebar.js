@@ -9,13 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { icon: 'fa-solid fa-pen', text: 'Essays',    href: '/pages/writing.html' },
         { icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/pages/bookmarks.html' },
     ];
-/**
+
     const projectsMenu = [
-        { icon: 'fa-solid fa-hexagon-nodes', text: 'micrograd.c',      href: '/projects/micrograd-c.html' },
-        { icon: 'fa-solid fa-network-wired', text: 'TCP Server',       href: '/projects/tcp-server.html' },
-        { icon: 'fa-solid fa-server',        text: 'VPS Hosting Setup', href: '/projects/vps.html' },
+        { icon: 'fa-solid fa-chart-line', text: 'PID controller', href: '/projects/pid-controller.html' },
     ];
-**/
+
     const onlineMenu = [
         { icon: 'fa-brands fa-x-twitter', text: 'X',       href: 'https://x.com/rssndr',        target: '_blank' },
         { icon: 'fa-brands fa-linkedin',  text: 'LinkedIn', href: 'https://www.linkedin.com/in/andrea-rossetti-092161384/', target: '_blank' },
@@ -46,15 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Main content wrapper
-    /**
-    To add projects, add this after mainMenu:
-            <div class="section-title">Projects</div>
-            ${generateMenuHTML(projectsMenu, 'sub-menu')}
-    **/
     sidebarHTML += `
         <div class="sidebar-content">
             ${generateMenuHTML(mainMenu)}
 
+            <div class="section-title">Projects</div>
+            ${generateMenuHTML(projectsMenu, 'sub-menu')}
         </div>
 
         <div class="sidebar-bottom">
