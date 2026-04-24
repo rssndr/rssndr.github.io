@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project - Andrea Rossetti</title>  <!-- Change project title here -->
-
+        <title>Project - Andrea Rossetti</title>  <!-- Change page title here -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="../favicon/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.1/lib/marked.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension@4.0.0/lib/index.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/lib/marked.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension@1.0.2/lib/index.umd.js"></script>
+    <script>
+        marked.use(markedKatex({
+            throwOnError: false
+        }));
+    </script>
 </head>
+
 <body>
     <nav id="sidebar-placeholder" class="sidebar"></nav>
-    <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <main>
         <div class="main-content">
@@ -37,16 +44,8 @@
     <script src="../js/back-to-top.js"></script>
 
     <script>
-        // Configure marked to use the KaTeX extension
-        const { marked } = window.marked;
-        const { markedKatex } = window.markedKatexExtension;
-
-        marked.use(markedKatex({
-          throwOnError: false,
-        }));
-
         // ================== CHANGE THIS LINE ONLY ==================
-        const markdownFile = "project.md";   // ←←← Put your .md filename here
+        const markdownFile = "project.md";
         // ===========================================================
 
         fetch(markdownFile)
@@ -57,14 +56,13 @@
                 return response.text();
             })
             .then(md => {
-                // Extract title from the first # heading
+                // Extract title from first H1
                 const titleMatch = md.match(/^# (.*)/m);
                 const title = titleMatch ? titleMatch[1].trim() : 'Untitled Post';
 
-                // Set page title
                 document.title = `${title} - Andrea Rossetti`;
 
-                // Render the markdown with KaTeX support
+                // Render markdown with KaTeX support
                 document.getElementById('post-content').innerHTML = marked.parse(md);
             })
             .catch(error => {
