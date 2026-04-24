@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const projectsMenu = [
         { icon: 'fa-solid fa-chart-line', text: 'PID controller', href: '/projects/pid-controller.html' },
+        { icon: 'fa-solid fa-file-code', text: 'cinit', href: '/projects/cinit.html' },
     ];
 
     const onlineMenu = [

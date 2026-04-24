@@ -133,7 +133,7 @@ You can launch both the simulation and live graph with a single command:
 ./run.sh
 ```
 
-![](/assets/demo.gif)
+![](../assets/pid-controller.gif)
 
 #### Lessons Learned
 
