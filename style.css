@@ -659,7 +659,7 @@ html {
 #post-content hr {
     border: none;
     height: 1px;
-    background-color: var(--secondary-text);
+    background-color: var(--border-color);
 }
 
 /* ************* */
