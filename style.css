@@ -656,6 +656,12 @@ html {
     color: var(--text-color);
 }
 
+#post-content hr {
+    border: none;
+    height: 1px;
+    background-color: var(--secondary-text);
+}
+
 /* ************* */
 /* MEDIA QUERIES */
 /* ************* */
