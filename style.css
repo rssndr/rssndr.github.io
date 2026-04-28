@@ -370,7 +370,7 @@ html {
     font-size: 14px;
 }
 
-.item-list li:hover .item-arrow {
+.item-title:hover .item-arrow {
     color: var(--accent-color);
 }
 
