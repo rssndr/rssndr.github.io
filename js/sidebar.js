@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Menus
     const mainMenu = [
         { icon: 'fas fa-home',     text: 'Home',      href: '/index.html' },
-        { icon: 'fas fa-user-tie', text: 'About',     href: '/pages/about.html' },
-        { icon: 'fa-solid fa-pen', text: 'Essays',    href: '/pages/writing.html' },
+        { icon: 'fa-solid fa-pen', text: 'Writing',    href: '/pages/writing.html' },
         { icon: 'fas fa-bookmark', text: 'Bookmarks', href: '/pages/bookmarks.html' },
     ];
 
