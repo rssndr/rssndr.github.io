@@ -1,4 +1,4 @@
-# The Real Enemy of Europe Isn't America or Russia
+# The Biggest Enemy of Europe Isn't America or Russia
 
 ## Why performative anti-Trumpism and anti-Putinism won’t save our continent
 
@@ -18,7 +18,7 @@ This is not leadership. It is delusion dressed up as virtue.
 
 We cannot keep pretending that “more Europe” automatically means better Europe when the Europe we have is run by people who have repeatedly proven themselves incapable of delivering results. Praising the ruling class simply because it mouths the right slogans against the current American president or the Russian dictator is not patriotism, but complicity.
 
-The way forward is painfully obvious, even if it is politically uncomfortable: Europe needs massive, structural reform. That means overhauling the EU’s governance to make it more democratic, more accountable and more capable of acting decisively in a dangerous world. It means replacing the current political class with leaders who are willing to make hard choices on defence, energy, borders, innovation and fiscal responsibility instead of chasing applause in international forums and virtue-signalling on the global stage.
+The way forward is painfully obvious, even if it is politically uncomfortable: Europe needs massive, structural reform. That means overhauling the EU’s governance to make it more accountable and more capable of acting decisively in a dangerous world. It means replacing the current political class with leaders who are willing to make hard choices on defence, energy, borders, innovation and fiscal responsibility instead of chasing applause in international forums and virtue-signalling on the global stage.
 
 The current elites will not reform themselves. They have to be voted out systematically, relentlessly, and very soon. Only then can we begin the serious work of reclaiming and strengthening the European project.
 
