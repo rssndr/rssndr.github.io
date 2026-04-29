@@ -21,10 +21,21 @@
 
 <body>
     <nav id="sidebar-placeholder" class="sidebar"></nav>
-    <button id="theme-toggle" class="theme-toggle">
-        <i class="fas fa-moon"></i>
-    </button>
+    <div class="settings-container">
+        <button id="settings-toggle" class="settings-toggle">
+            <i class="fas fa-gear"></i>
+        </button>
 
+        <div class="dropdown-menu" id="dropdown-menu">
+            <button class="menu-item" id="theme-toggle" title="Toggle Theme">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+
+            <button class="menu-item" id="lang-toggle" title="Cambia Lingua">
+                <i class="fa-solid fa-language"></i>
+            </button>
+        </div>
+    </div>
     <main>
         <div class="main-content">
             <div class="section body-section" id="post-content">

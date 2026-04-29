@@ -20,7 +20,7 @@ Cinit is a **bash script** designed to automate the initialization of C projects
 - **Git**: Version control integration with a pre-configured `.gitignore`.
 
 ## **Why It Matters**
-I built Cinit to solve a personal pain point: **spending too much time copying and pasting files** for every new C project. By automating this process, I can focus on writing code instead of setting up repositories. The project is open-source, so others can use it, contribute, or adapt it to their needs.
+I built Cinit to solve a personal issue: **spending too much time copying and pasting files** for every new C project. By automating this process, I can focus on writing code instead of setting up repositories. The project is open-source, so others can use it, contribute, or adapt it to their needs.
 
 ## **Demo**
 

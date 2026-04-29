@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home - Andrea Rossetti</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+        <script data-goatcounter="https://andrearossetti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    </head>
+    <body>
+        <nav id="sidebar-placeholder" class="sidebar"></nav>
+        <div class="settings-container">
+            <button id="settings-toggle" class="settings-toggle">
+                <i class="fas fa-gear"></i>
+            </button>
+
+            <div class="dropdown-menu" id="dropdown-menu">
+                <button class="menu-item" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+
+                <button class="menu-item" id="lang-toggle" title="Cambia Lingua">
+                    <i class="fa-solid fa-language"></i>
+                </button>
+            </div>
+        </div>
+        <main>
+            <div class="intro-container">
+                <div class="intro-content">
+                    <div class="info">
+                        <h1>Andrea Rossetti</h1>
+                        <p class="info-location"><i class="fa-solid fa-location-dot"></i> Milan, Italy</p>
+                    </div>
+                    <div class="job">
+                        <p class="job-title">Tech Lead, <a class="highlighted-link" href="https://ave-europa.eu/" target="_blank">Ave Europa</a>.</p>
+                    </div>
+                    <div class="introduction">
+                        <p>Hey, Andrea here. I'm a young European interested in technology and politics.</p>
+                        <p>This is my personal website, a collection of my projects, essays and useful external resources. Feel free to explore!</p>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <div class="profile-image" style="background-image: url('./img/escher.jpg');"></div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="section experience-section">
+                    <h2>Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Tech Lead, Ave Europa</h3>
+                                <span class="timeline-date">June 2025 - Present</span>
+                                <p>Started and currently leading the team developing the digital tools, IT infrastructure, websites, and managing internal communications at Ave Europa, a pan-European political movement, building efficient, scalable and secure systems used daily by hundreds of volunteers across all of Europe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="section">
+                    <div class="section-header">
+                        <h2>Projects <i class="fas fa-thumbtack pin-icon" style="color: var(--secondary-text)"></i></h2>
+                        <a href="./pages/projects.html" class="section-read-more">Read more...</a>
+                    </div>
+                    <ul class="item-list">
+                        <li>
+                            <a href="../projects/pid-controller.html">
+                                <div class="item-text">
+                                    <span class="item-title">PID Controller</span>
+                                    <span class="item-subtitle">Building a Quadcopter Flight Controller from Scratch</span>
+                                </div>
+                                <span class="item-arrow">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../projects/cinit.html">
+                                <div class="item-text">
+                                    <span class="item-title">cinit</span>
+                                    <span class="item-subtitle">Quick C Project Initialization</span>
+                                </div>
+                                <span class="item-arrow">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <div class="section-header">
+                        <h2>Writing <i class="fas fa-thumbtack pin-icon" style="color: var(--secondary-text)"></i></h2>
+                        <a href="./pages/writing.html" class="section-read-more">Read more...</a>
+                    </div>
+                    <ul class="item-list">
+<!--
+                        <li>
+                            <a href="../posts/20260427-moral-equivalent-of-war.html">
+                                <div class="item-text">
+                                    <span class="item-title">The Moral Equivalent of War</span>
+                                    <span class="item-subtitle">Rebuilding Civic Strength in an Age of Comfort</span>
+                                </div>
+                                <span class="item-arrow">→</span>
+                            </a>
+                        </li>
+-->
+                        <li>
+                            <a href="../posts/20260430-the-biggest-enemy-of-europe.html">
+                                <div class="item-text">
+                                    <span class="item-title">The Biggest Enemy of Europe Isn't America or Russia</span>
+                                    <span class="item-subtitle">Why performative anti-Trumpism and anti-Putinism won’t save our continent</span>
+                                </div>
+                                <span class="item-arrow">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="section experience-section">
+                    <h2>Online</h2>
+                    <div class="socials-container">
+                        <a href="https://x.com/rssndr" target="_blank" class="social-link"><i class="fa-brands fa-x-twitter"></i> X</a>
+                        <a href="https://www.linkedin.com/in/andrea-rossetti-092161384/" target="_blank" class="social-link"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/rssndr" target="_blank" class="social-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="mailto:rossettiandrea@proton.me" target="_blank" class="social-link"><i class="fa-solid fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="site-footer">
+                <p>Built with HTML, CSS & JS</p>
+                <p>&copy; 2026 Andrea Rossetti</p>
+            </footer>
+        </main>
+
+        <button id="back-to-top">↑</button>
+
+        <script src="../js/theme-toggle.js"></script>
+        <script src="../js/back-to-top.js"></script>
+        <script src="../js/sidebar.js"></script>
+    </body>
+</html>
+
