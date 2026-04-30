@@ -5,6 +5,8 @@ Building a Quadcopter Flight Controller from Scratch
 GitHub repo: <a href="https://github.com/rssndr/PID-controller" target="_blank">PID Controller</a> <br>
 Last update: 2026/04/23
 
+---
+
 ## PID Control in C
 
 Over the last few weeks I’ve been developing a realistic quadcopter simulation in C. What started as a simple object falling under gravity has become a stable, disturbance-resistant altitude controller.

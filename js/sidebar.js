@@ -10,14 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const projectsMenu = [
-        { icon: 'fa-solid fa-chart-line', text: 'PID controller', href: '/projects/pid-controller.html' },
-        { icon: 'fa-solid fa-file-code', text: 'cinit', href: '/projects/cinit.html' },
+        { icon: 'fa-solid fa-chart-line',       text: 'PID controller', href: '/projects/pid-controller.html' },
+        { icon: 'fa-solid fa-file-code',        text: 'cinit',          href: '/projects/cinit.html' },
+        { icon: 'fa-solid fa-network-wired',    text: 'micrograd.c',    href: '/projects/micrograd.html' },
     ];
 
     const onlineMenu = [
         { icon: 'fa-brands fa-x-twitter',   text: 'X',          href: 'https://x.com/rssndr',                                   target: '_blank' },
-        { icon: 'fa-brands fa-linkedin',    text: 'LinkedIn',   href: 'https://www.linkedin.com/in/andrea-rossetti-092161384/', target: '_blank' },
         { icon: 'fa-brands fa-github',      text: 'GitHub',     href: 'https://github.com/rssndr',                              target: '_blank' },
+        { icon: 'bi bi-substack',           text: 'Substack',   href: 'https://rossettiandrea.substack.com',                    target: '_blank' },
         { icon: 'fa-solid fa-envelope',     text: 'Email',      href: 'mailto:rossettiandrea@proton.me',                        target: '_blank' },
     ];
 

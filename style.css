@@ -547,7 +547,7 @@ html {
 }
 
 .social-link {
-    color: var(--secondary-text) !important;
+    color: var(--secondary-text);
     text-decoration: none;
     font-size: 15px;
     display: flex;
@@ -561,7 +561,11 @@ html {
 
 .social-link:hover {
     color: var(--accent-color);
-    text-decoration: underline;
+}
+
+.bi-substack {
+    font-size: 12.5px;
+    padding-top: 2px;
 }
 
 .intro-image {
