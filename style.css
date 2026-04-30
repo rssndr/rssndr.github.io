@@ -796,12 +796,6 @@ html {
         flex-direction: row;
         gap: 32px;
     }
-
-    .intro-image {
-        width: 200px;
-        aspect-ratio: 1/1;
-        flex-shrink: 0;
-    }
 }
 
 @media (max-width: 864px) {
@@ -827,6 +821,11 @@ html {
         flex-direction: column;
     }
 
+    .intro-image {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .settings-container {
         right: 6.5px;
         top: 60px;
@@ -844,14 +843,6 @@ html {
 
     .social-link i {
         margin-right: 4px;
-    }
-
-    .intro-image {
-        width: 200px;
-        aspect-ratio: 1/1;
-        margin-bottom: 32px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     main {
