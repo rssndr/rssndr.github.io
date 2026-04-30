@@ -1,12 +1,12 @@
 :root {
-    --background: #fff;
+    --background: #ddd;
     --text-color: #000;
     --secondary-text: #555;
-    --sidebar-bg: #f7f7f7;
-    --sidebar-hover: #e7e7e7;
+    --sidebar-bg: #d7d7d7;
+    --sidebar-hover: #ccc;
     --sidebar-active-bg: #000;
-    --sidebar-active-text: #fff;
-    --border-color: #eee;
+    --sidebar-active-text: #f7f7f7;
+    --border-color: #bbb;
     --shadow-color: rgba(0, 0, 0, 0.05);
     --accent-color: #17645c;
 }

@@ -20,7 +20,7 @@ This dilemma was identified more than a century ago by William James. In his 191
 
 James did not advocate for war. Instead, he proposed a substitute: a “moral equivalent” that could impose similar demands without the destruction. His idea was a form of universal civic conscription, mobilising young people for difficult, collective tasks in service of the nation. The goal was character formation: to instil habits of endurance, cooperation, and responsibility.
 
-Modern research provides a scientific foundation for what James intuited. Studies on **post-traumatic growth** show that survivors of adversity often emerge with greater resilience, clarity, and empathy—qualities that can be cultivated, without catastrophe, through deliberate exposure to controlled stress. Research on **hormesis** demonstrates that mild, recoverable stressors, such as regular exercise, cold exposure, or mental rehearsal,activate adaptive pathways in the body and brain, enhancing neuroplasticity and building long-term emotional and physical toughness [[5](#ref5)]. Complementary studies on **growth mindset**, pioneered by Carol Dweck, show that training people to view setbacks as opportunities for learning rather than fixed judgements of ability lowers anxiety, improves persistence, and accelerates resilience [[6](#ref6)]. These findings suggest that resilience can be cultivated deliberately, if appropriate structures exist.
+Modern research provides a scientific foundation for what James intuited. Studies on **post-traumatic growth** show that survivors of adversity often emerge with greater resilience, clarity, and empathy—qualities that can be cultivated, without catastrophe, through deliberate exposure to controlled stress. Research on **hormesis** demonstrates that mild, recoverable stressors, such as regular exercise, cold exposure or mental rehearsal, activate adaptive pathways in the body and brain, enhancing neuroplasticity and building long-term emotional and physical toughness [[5](#ref5)]. Complementary studies on **growth mindset**, pioneered by Carol Dweck, show that training people to view setbacks as opportunities for learning rather than fixed judgements of ability lowers anxiety, improves persistence, and accelerates resilience [[6](#ref6)]. These findings suggest that resilience can be cultivated deliberately, if appropriate structures exist.
 
 The challenge is not conceptual, but institutional.
 
@@ -47,14 +47,14 @@ Crucially, these elements should be framed within a developmental model informed
 
 The most direct way to rebuild civic commitment is through shared obligation. Voluntary hardship is effective for individuals who seek it; it is far less reliable as a societal mechanism. Structured service programs provide a scalable alternative.
 
-Several European states offer relevant examples:
+Several European and extra-European democracies offer relevant examples:
 
 - **Finland’s** conscription system produces a large trained reserve and is associated with high levels of social cohesion and willingness to defend the nation (over 80% in recent polls, compared to 20-30% in much of Western Europe) [[7](#ref7)].
 - **Norway, Sweden, and the Baltic states** have reintroduced or expanded forms of national service in response to changing security conditions.
 - **Singapore’s National Service** (two years for males, with reserves until age 40–50) is widely credited with transforming a vulnerable city-state into a high-trust, low-crime, economically dominant society. It instils discipline, reduces youth delinquency, and creates a shared national identity across ethnic lines.
 - **Israel’s** universal service (men and women, with combat and support roles) functions as both a defence backbone and a national leadership academy. Elite units like 8200 have become a direct pipeline to the tech economy, powering Israel’s "Start-Up Nation" miracle.
 
-Beyond national defence, the concept can be expanded into a broader European framework. One could imagine a European-scale civic service program in which young people from different member states work together on infrastructure, environmental, or disaster-response projects. Such a program would build individual resilience, foster a stronger pan-European identity and sense of shared destiny. Historical precedents, such as the United States’ Civilian Conservation Corps in the 1930s, reinforce the feasibility of this approach [[8](#ref8)].
+Beyond national defence, the concept can be expanded into a broader European framework. One could imagine a European-scale civic service program in which young people from different member states work together on infrastructure, environmental, or disaster-response projects. Such a program would build individual resilience, foster a stronger pan-European identity and a sense of shared destiny. Historical precedents, such as the United States’ Civilian Conservation Corps in the 1930s, reinforce the feasibility of this approach [[8](#ref8)].
 
 ### 3. Aligning Incentives with Responsibility
 
