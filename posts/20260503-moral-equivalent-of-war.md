@@ -4,6 +4,7 @@
 
 Author: Andrea Rossetti <br>
 Date: 03/05/2026 <br>
+Published on: [Substack](https://open.substack.com/pub/rossettiandrea/p/the-moral-equivalent-of-war)
 
 ---
 
@@ -21,7 +22,7 @@ The question, then, is how societies that have successfully minimized hardship c
 
 ## William James and the Paradox of Peace
 
-This dilemma was identified more than a century ago by William James. In his 1910 essay *The Moral Equivalent of War*, James argued that war, despite its horrors, has historically served as a powerful mechanism for cultivating discipline, solidarity, and sacrifice [[4](#ref4)]. The danger, he warned, was that peaceful and prosperous societies might lose these qualities precisely because they no longer needed to exercise them. Comfort alone, he observed, produces "flat degeneration": a society so focused on managing its slow decline that it risks dying out or being conquered.
+This dilemma was identified more than a century ago by William James. In his 1910 essay *The Moral Equivalent of War*, James argued that war, despite its horrors, has historically served as a powerful mechanism for cultivating discipline, solidarity, and sacrifice [[4](#ref4)]. The danger, he warned, was that peaceful and prosperous societies might lose these qualities precisely because they no longer needed to exercise them. Comfort alone, he observed, produces "flat degeneration": a society so focused on managing its own slow decline that it risks dying out or being conquered.
 
 James did not advocate for war. Instead, he proposed a substitute: a “moral equivalent” that could impose similar demands without the destruction. His idea was a form of universal civic conscription, mobilising young people for difficult, collective tasks in service of the nation. The goal was character formation: to instil habits of endurance, cooperation, and responsibility.
 
@@ -46,7 +47,7 @@ A re-balanced model would treat education as preparation for real-world challeng
 - Public speaking and high-stakes evaluation
 - Apprenticeships and responsibility-bearing roles
 
-Crucially, these elements should be framed within a developmental model informed by growth mindset research [[6](#ref6)], emphasising that ability is built through effort and adaptation. Some European countries already point in this direction. Finland combines strong academic outcomes with cultural norms that emphasise independence, practical competence, and national service. Nordic traditions such as *friluftsliv* embed regular exposure to challenging environments. These models demonstrate that resilience can be cultivated systematically without undermining educational excellence.
+Crucially, these elements should be framed within a developmental model informed by growth mindset research, emphasising that ability is built through effort and adaptation. Some European countries already point in this direction. Finland combines strong academic outcomes with cultural norms that emphasise independence, practical competence, and national service. Nordic traditions such as *friluftsliv* embed regular exposure to challenging environments. These models demonstrate that resilience can be cultivated systematically without undermining educational excellence.
 
 ### 2. Universal Civic or National Service
 
@@ -75,7 +76,7 @@ This does not require abandoning social protections, but ensuring that they do n
 
 ---
 
-## Conclusion: Europe’s Strategic Choice
+## Conclusion
 
 William James was right: the virtues forged by war, such as discipline, solidarity, and courage, are too important to be left to war alone. The task for modern Europe is to develop their equivalent under conditions of peace, before history forces the issue. This is not simply a social or cultural project, but a strategic imperative. In an increasingly multi-polar world, the strength of Europe will depend not only on economic output or technological capability, but on the willingness of its citizens to endure, to contribute, and, if necessary, to defend.
 
@@ -89,7 +90,7 @@ The alternative? Waiting for war or collapse to impose the lesson that resilienc
 <a id="ref2"></a>[2] [Gallup International (2024). *Global Survey on Willingness to Fight for One’s Country.*](https://www.gallup-international.com/survey-results-and-news/survey-result/fewer-people-are-willing-to-fight-for-their-country-compared-to-ten-years-ago) <br>
 <a id="ref3"></a>[3] [World Health Organization (2022). *Global Status Report on Physical Activity.*](https://www.who.int/publications/i/item/9789240059153) <br>
 <a id="ref4"></a>[4] [James, W. (1910). *The Moral Equivalent of War.*](http://public-library.uk/ebooks/65/5.pdf) <br>
-<a id="ref5"></a>[5] [Mattson, M. P. (2008). *Hormesis Defined.* Ageing Research Reviews.](https://pubmed.ncbi.nlm.nih.gov/18162444/) <br>
+<a id="ref5"></a>[5] [Mattson, M. P. (2008). *Hormesis Defined.*](https://pubmed.ncbi.nlm.nih.gov/18162444/) <br>
 <a id="ref6"></a>[6] [Dweck, C. S. (2006). *Mindset: The New Psychology of Success.*](https://books.google.com/books/about/Mindset.html?id=Pff9Xzpsj4oC) <br>
 <a id="ref7"></a>[7] [Finnish Defence Forces (2023). *Conscription and National Defence Report.*](https://www.arctictoday.com/finlands-quiet-confidence-how-one-small-nation-has-become-a-defense-role-model-for-europe/) <br>
 <a id="ref8"></a>[8] [U.S. National Archives. *Civilian Conservation Corps Records.*](https://www.archives.gov/research/guide-fed-records/groups/035.html)

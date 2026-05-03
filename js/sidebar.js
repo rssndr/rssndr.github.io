@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const onlineMenu = [
-        { icon: 'fa-brands fa-github',      text: 'GitHub',     href: 'https://github.com/rssndr',          target: '_blank' },
-        { icon: 'bi bi-substack',           text: 'Substack',   href: 'https://substack.com/@rssndr',       target: '_blank' },
-        { icon: 'fa-solid fa-envelope',     text: 'Email',      href: 'mailto:rossettiandrea@proton.me',    target: '_blank' },
+        { icon: 'fa-brands fa-github',      text: 'GitHub',     href: 'https://github.com/rssndr',              target: '_blank' },
+        { icon: 'bi bi-substack',           text: 'Substack',   href: 'https://rossettiandrea.substack.com',    target: '_blank' },
+        { icon: 'fa-solid fa-envelope',     text: 'Email',      href: 'mailto:rossettiandrea@proton.me',        target: '_blank' },
     ];
 
     const generateMenuHTML = (items, className = 'menu', isLink = false) => {
