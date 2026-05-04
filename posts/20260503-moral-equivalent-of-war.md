@@ -1,6 +1,6 @@
 # The Moral Equivalent of War
 
-## Rebuilding Civic Strength in an Age of Comfort
+Rebuilding Civic Strength in an Age of Comfort
 
 Author: Andrea Rossetti <br>
 Date: 03/05/2026 <br>
@@ -18,8 +18,6 @@ This unfolds against a shifting global backdrop. The post-Cold War “rules-base
 
 The question, then, is how societies that have successfully minimized hardship can still produce citizens capable of enduring it.
 
----
-
 ## William James and the Paradox of Peace
 
 This dilemma was identified more than a century ago by William James. In his 1910 essay *The Moral Equivalent of War*, James argued that war, despite its horrors, has historically served as a powerful mechanism for cultivating discipline, solidarity, and sacrifice [[4](#ref4)]. The danger, he warned, was that peaceful and prosperous societies might lose these qualities precisely because they no longer needed to exercise them. Comfort alone, he observed, produces "flat degeneration": a society so focused on managing its own slow decline that it risks dying out or being conquered.
@@ -29,8 +27,6 @@ James did not advocate for war. Instead, he proposed a substitute: a “moral eq
 Modern research provides a scientific foundation for what James intuited. While studies on **post-traumatic growth** show that survivors of adversity often emerge with greater resilience, clarity, and empathym, all these qualities can also be cultivated without catastrophe, through deliberate exposure to controlled stress. Research on **hormesis** demonstrates that mild, recoverable stressors, such as regular exercise, cold exposure or mental rehearsal, activate adaptive pathways in the body and brain, enhancing neuroplasticity and building long-term emotional and physical toughness [[5](#ref5)]. Complementary studies on **growth mindset**, pioneered by Carol Dweck, show that training people to view setbacks as opportunities for learning rather than fixed judgements of ability lowers anxiety, improves persistence, and accelerates resilience [[6](#ref6)]. These findings suggest that resilience can be cultivated deliberately, if appropriate structures exist.
 
 The challenge is not conceptual, but institutional.
-
----
 
 ## Rebuilding Civic Strength: A European Agenda
 
@@ -73,8 +69,6 @@ Re-balancing incentives involves:
 - Designing social systems that maintain a connection between support and contribution
 
 This does not require abandoning social protections, but ensuring that they do not inadvertently detach individuals from responsibility or shared obligation. Media, parents, and institutions must stop rewarding victimhood narratives and start elevating stories of quiet competence and post-adversity growth.
-
----
 
 ## Conclusion
 

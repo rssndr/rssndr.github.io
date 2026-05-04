@@ -5,8 +5,6 @@ Quick C project initialisation
 GitHub repo: <a href="https://https://github.com/rssndr/cinit" target="_blank">cinit</a> <br>
 Last update: 2026/04/24
 
----
-
 ## **Description**
 Cinit is a **bash script** designed to automate the initialization of C projects. It generates a standardized directory structure, including a `Makefile`, `.gitignore`, `main.c`, `README.md`, and a dynamically generated `LICENSE` file. The tool is built to save time, reduce manual errors, and enforce consistency across projects.
 
